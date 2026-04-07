@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.39.3">
+    <meta name="project" content="Lightning v2.16.1-pre1">
+
+
+    <title>Lightning.AiAssistant — Lightning v2.16.1-pre1</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-VYWJUHZE.css" />
+
+    <script defer src="dist/sidebar_items-BC0EF6CC.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectImage">
+          <img src="assets/logo.png" alt="Lightning" />
+        </a>
+
+      <div>
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectName" translate="no">
+Lightning
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v2.16.1-pre1
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras=""></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-module" id="main" data-type="modules">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Lightning</span>
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
+          </label>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>
+      <span translate="no">Lightning.AiAssistant</span> 
+      <small class="app-vsn" translate="no">(Lightning v2.16.1-pre1)</small>
+
+    </h1>
+
+      <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+  </div>
+
+
+    <section id="moduledoc">
+<p>The AI assistant context module for Lightning workflows.</p><p>This module provides a comprehensive interface for managing AI-powered chat sessions
+within the Lightning platform. It handles two main types of AI assistance:</p><ol><li><strong>Job-specific assistance</strong> - Helps users with coding tasks, debugging, and
+adaptor-specific guidance for individual workflow jobs</li><li><strong>Workflow template generation</strong> - Assists in creating complete workflow
+templates from natural language descriptions</li></ol>
+    </section>
+
+</div>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:opts/0" data-no-tooltip="" translate="no">opts()</a>
+
+      </div>
+
+    </div>
+
+</div>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#associate_workflow/2" data-no-tooltip="" translate="no">associate_workflow(session, workflow)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Associates a workflow with a chat session.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#cleanup_unsaved_job_sessions/1" data-no-tooltip="" translate="no">cleanup_unsaved_job_sessions(workflow)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Cleans up unsaved job data in AI sessions after workflow is saved.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#cleanup_unsaved_workflow_sessions/1" data-no-tooltip="" translate="no">cleanup_unsaved_workflow_sessions(workflow)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Cleans up unsaved workflow data in AI sessions after workflow is saved.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create_session/4" data-no-tooltip="" translate="no">create_session(job, user, content, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Creates a new chat session for job-specific AI assistance.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create_session_for_unsaved_job/3" data-no-tooltip="" translate="no">create_session_for_unsaved_job(user, content, meta)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Creates a new chat session for an unsaved job (exists in Y.Doc but not DB).</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create_workflow_session/6" data-no-tooltip="" translate="no">create_workflow_session(project, job, workflow, user, content, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Creates a new chat session for workflow template generation.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#enabled?/0" data-no-tooltip="" translate="no">enabled?()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Checks if the AI assistant feature is enabled via application configuration.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#endpoint_available?/0" data-no-tooltip="" translate="no">endpoint_available?()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Checks if the Apollo AI service endpoint is reachable and responding.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#enrich_session_with_job_context/1" data-no-tooltip="" translate="no">enrich_session_with_job_context(session)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Enriches a chat session with job-specific context.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#find_pending_user_messages/1" data-no-tooltip="" translate="no">find_pending_user_messages(session)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Finds all pending user messages in a chat session.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_session/1" data-no-tooltip="" translate="no">get_session(id)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_session!/1" data-no-tooltip="" translate="no">get_session!(id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Retrieves a chat session by ID with all related data preloaded.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#has_more_sessions?/2" data-no-tooltip="" translate="no">has_more_sessions?(resource, current_count)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Checks if additional sessions are available beyond the current count.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#list_sessions/3" data-no-tooltip="" translate="no">list_sessions(resource, sort_direction \\ :desc, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns paginated chat sessions with metadata for improved user experience.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#mark_disclaimer_read/1" data-no-tooltip="" translate="no">mark_disclaimer_read(user)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Records that a user has read and accepted the AI assistant disclaimer.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#put_expression_and_adaptor/3" data-no-tooltip="" translate="no">put_expression_and_adaptor(session, expression, adaptor)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Adds job-specific context to a chat session for enhanced AI assistance.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#query/3" data-no-tooltip="" translate="no">query(session, content, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Queries the AI assistant for job-specific code assistance.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#query_stream/3" data-no-tooltip="" translate="no">query_stream(session, content, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Queries the AI service for job assistance with streaming.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#query_workflow/3" data-no-tooltip="" translate="no">query_workflow(session, content, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Queries the AI service for workflow template generation.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#query_workflow_stream/3" data-no-tooltip="" translate="no">query_workflow_stream(session, content, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Queries the AI service for workflow template generation with streaming.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#retry_message/1" data-no-tooltip="" translate="no">retry_message(message)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Resets a message status to pending and enqueues it for reprocessing.
+Handles both the database update and Oban job creation atomically.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#save_message/3" data-no-tooltip="" translate="no">save_message(session, message_attrs, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Saves a message to an existing chat session.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#title_max_length/0" data-no-tooltip="" translate="no">title_max_length()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the maximum allowed length for chat session titles.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update_message_status/3" data-no-tooltip="" translate="no">update_message_status(session, message, status)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Updates the status of a specific message within a chat session.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#user_has_read_disclaimer?/1" data-no-tooltip="" translate="no">user_has_read_disclaimer?(user)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Checks if a user has acknowledged the AI assistant disclaimer recently.</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Types</span>
+    </h1>
+
+    <div class="types-list">
+<section class="detail" id="t:opts/0">
+
+  <div class="detail-header">
+    <a href="#t:opts/0" class="detail-link" data-no-tooltip="" aria-label="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">opts()</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L36" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> opts() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+
+    <div class="functions-list">
+<section class="detail" id="associate_workflow/2">
+
+  <div class="detail-header">
+    <a href="#associate_workflow/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">associate_workflow(session, workflow)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L721" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> associate_workflow(
+  <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>(),
+  <a href="Lightning.Workflows.Workflow.html#t:t/0">Lightning.Workflows.Workflow.t</a>()
+) ::
+  {:ok, <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Associates a workflow with a chat session.</p><p>Links a generated workflow to the session that created it, enabling tracking
+and future modifications through the same conversation context.</p><h2 id="associate_workflow/2-parameters" class="section-heading"><a href="#associate_workflow/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">session</code> - The <code class="inline">%ChatSession{}</code> that generated the workflow</li><li><code class="inline">workflow</code> - The <code class="inline">%Workflow{}</code> struct to associate</li></ul><h2 id="associate_workflow/2-returns" class="section-heading"><a href="#associate_workflow/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, session}</code> - Successfully linked workflow to session</li><li><code class="inline">{:error, changeset}</code> - Association failed with validation errors</li></ul>
+  </section>
+</section>
+<section class="detail" id="cleanup_unsaved_job_sessions/1">
+
+  <div class="detail-header">
+    <a href="#cleanup_unsaved_job_sessions/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">cleanup_unsaved_job_sessions(workflow)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L335" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> cleanup_unsaved_job_sessions(<a href="Lightning.Workflows.Workflow.html#t:t/0">Lightning.Workflows.Workflow.t</a>()) ::
+  {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
+
+      </div>
+
+<p>Cleans up unsaved job data in AI sessions after workflow is saved.</p><p>When a workflow is saved and jobs get database IDs, this function:</p><ol><li>Finds all sessions with matching Y.Doc job IDs in meta[&quot;unsaved_job&quot;]</li><li>Updates those sessions to set job_id to the real database ID</li><li>Removes the meta[&quot;unsaved_job&quot;] data</li></ol><h2 id="cleanup_unsaved_job_sessions/1-parameters" class="section-heading"><a href="#cleanup_unsaved_job_sessions/1-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">workflow</code> - The saved <code class="inline">%Workflow{}</code> with jobs that have database IDs</li></ul><h2 id="cleanup_unsaved_job_sessions/1-returns" class="section-heading"><a href="#cleanup_unsaved_job_sessions/1-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, updated_count}</code> - Number of sessions updated</li><li><code class="inline">{:error, reason}</code> - If update fails</li></ul><h2 id="cleanup_unsaved_job_sessions/1-example" class="section-heading"><a href="#cleanup_unsaved_job_sessions/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Example</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">cleanup_unsaved_job_sessions</span><span class="p" data-group-id="8257353537-1">(</span><span class="n">workflow</span><span class="p" data-group-id="8257353537-1">)</span><span class="w">
+</span><span class="p" data-group-id="8257353537-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="8257353537-2">}</span><span class="w">  </span><span class="c1"># Updated 3 sessions</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="cleanup_unsaved_workflow_sessions/1">
+
+  <div class="detail-header">
+    <a href="#cleanup_unsaved_workflow_sessions/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">cleanup_unsaved_workflow_sessions(workflow)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L417" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> cleanup_unsaved_workflow_sessions(<a href="Lightning.Workflows.Workflow.html#t:t/0">Lightning.Workflows.Workflow.t</a>()) ::
+  {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
+
+      </div>
+
+<p>Cleans up unsaved workflow data in AI sessions after workflow is saved.</p><p>When a workflow in create mode is saved for the first time, this function:</p><ol><li>Finds all sessions with matching temporary workflow IDs in meta[&quot;unsaved_workflow&quot;]</li><li>Updates those sessions to set workflow_id to the real database ID</li><li>Removes the meta[&quot;unsaved_workflow&quot;] data</li></ol><h2 id="cleanup_unsaved_workflow_sessions/1-parameters" class="section-heading"><a href="#cleanup_unsaved_workflow_sessions/1-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">workflow</code> - The saved <code class="inline">%Workflow{}</code> with a database ID</li></ul><h2 id="cleanup_unsaved_workflow_sessions/1-returns" class="section-heading"><a href="#cleanup_unsaved_workflow_sessions/1-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, updated_count}</code> - Number of sessions updated</li><li><code class="inline">{:error, reason}</code> - If update fails</li></ul><h2 id="cleanup_unsaved_workflow_sessions/1-example" class="section-heading"><a href="#cleanup_unsaved_workflow_sessions/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Example</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">cleanup_unsaved_workflow_sessions</span><span class="p" data-group-id="2771970268-1">(</span><span class="n">workflow</span><span class="p" data-group-id="2771970268-1">)</span><span class="w">
+</span><span class="p" data-group-id="2771970268-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="2771970268-2">}</span><span class="w">  </span><span class="c1"># Updated 2 sessions</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="create_session/4">
+
+    <span id="create_session/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_session/4" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">create_session(job, user, content, opts \\ [])</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L159" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_session(
+  <a href="Lightning.Workflows.Job.html#t:t/0">Lightning.Workflows.Job.t</a>(),
+  <a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="#t:opts/0">opts</a>()
+) ::
+  {:ok, <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Creates a new chat session for job-specific AI assistance.</p><p>Initializes a new session with:</p><ul><li>Association with the specified job and user</li><li>Auto-generated title from the initial message content</li><li>Job's expression and adaptor context (virtual fields)</li><li>The initial user message</li></ul><h2 id="create_session/4-parameters" class="section-heading"><a href="#create_session/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">job</code> - The <code class="inline">%Job{}</code> struct this session will assist with</li><li><code class="inline">user</code> - The <code class="inline">%User{}</code> creating the session</li><li><code class="inline">content</code> - Initial message content that will become the session title</li><li><code class="inline">opts</code> - Keyword list of options:<ul><li><code class="inline">:meta</code> - Optional metadata for the session</li><li><code class="inline">:code</code> - Optional workflow code for the initial message</li></ul></li></ul><h2 id="create_session/4-returns" class="section-heading"><a href="#create_session/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, session}</code> - Successfully created session with initial message</li><li><code class="inline">{:error, changeset}</code> - Validation errors during creation</li></ul>
+  </section>
+</section>
+<section class="detail" id="create_session_for_unsaved_job/3">
+
+  <div class="detail-header">
+    <a href="#create_session_for_unsaved_job/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">create_session_for_unsaved_job(user, content, meta)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L210" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_session_for_unsaved_job(<a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
+  {:ok, <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Creates a new chat session for an unsaved job (exists in Y.Doc but not DB).</p><p>This is used during collaborative editing when users want AI assistance
+for jobs they've created but haven't saved to the database yet.</p><h2 id="create_session_for_unsaved_job/3-parameters" class="section-heading"><a href="#create_session_for_unsaved_job/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">user</code> - The <code class="inline">%User{}</code> creating the session</li><li><code class="inline">content</code> - Initial message content that will become the session title</li><li><code class="inline">meta</code> - Metadata including unsaved job data with keys:<ul><li><code class="inline">&quot;unsaved_job&quot;</code> - Map with job data:<ul><li><code class="inline">&quot;id&quot;</code> - The Y.Doc job ID (for future linking when saved)</li><li><code class="inline">&quot;name&quot;</code> - Job name</li><li><code class="inline">&quot;body&quot;</code> - Job expression code</li><li><code class="inline">&quot;adaptor&quot;</code> - Job adaptor</li><li><code class="inline">&quot;workflow_id&quot;</code> - Workflow the job belongs to</li></ul></li></ul></li></ul><h2 id="create_session_for_unsaved_job/3-returns" class="section-heading"><a href="#create_session_for_unsaved_job/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, session}</code> - Successfully created session with initial message</li><li><code class="inline">{:error, changeset}</code> - Validation errors during creation</li></ul>
+  </section>
+</section>
+<section class="detail" id="create_workflow_session/6">
+
+    <span id="create_workflow_session/5"></span>
+
+  <div class="detail-header">
+    <a href="#create_workflow_session/6" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">create_workflow_session(project, job, workflow, user, content, opts \\ [])</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L271" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_workflow_session(
+  <a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>(),
+  <a href="Lightning.Workflows.Job.html#t:t/0">Lightning.Workflows.Job.t</a>() | nil,
+  <a href="Lightning.Workflows.Workflow.html#t:t/0">Lightning.Workflows.Workflow.t</a>() | nil,
+  <a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="#t:opts/0">opts</a>()
+) :: {:ok, <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Creates a new chat session for workflow template generation.</p><p>Initializes a session specifically for creating workflow templates:</p><ul><li>Associates with a project and optionally an existing workflow</li><li>Sets session type to &quot;workflow_template&quot;</li><li>Includes the initial user message describing the desired workflow</li></ul><h2 id="create_workflow_session/6-parameters" class="section-heading"><a href="#create_workflow_session/6-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">project</code> - The <code class="inline">%Project{}</code> struct where the workflow will be created</li><li><code class="inline">workflow</code> - The <code class="inline">%Workflow{}</code> struct to associate with the session, or <code class="inline">nil</code> for new workflows</li><li><code class="inline">user</code> - The <code class="inline">%User{}</code> requesting the workflow template</li><li><code class="inline">content</code> - Description of the desired workflow functionality</li><li><code class="inline">opts</code> - Keyword list of options:<ul><li><code class="inline">:meta</code> - Optional metadata for the session</li><li><code class="inline">:code</code> - Optional workflow code for the initial message</li></ul></li></ul><h2 id="create_workflow_session/6-returns" class="section-heading"><a href="#create_workflow_session/6-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, session}</code> - Successfully created workflow session with initial message</li><li><code class="inline">{:error, changeset}</code> - Validation errors during creation</li></ul>
+  </section>
+</section>
+<section class="detail" id="enabled?/0">
+
+  <div class="detail-header">
+    <a href="#enabled?/0" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">enabled?()</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L55" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> enabled?() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Checks if the AI assistant feature is enabled via application configuration.</p><p>Verifies that both the Apollo endpoint URL and API key are properly configured,
+which are required for AI functionality.</p><h2 id="enabled?/0-returns" class="section-heading"><a href="#enabled?/0-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p><code class="inline">true</code> if AI assistant is properly configured and enabled, <code class="inline">false</code> otherwise.</p>
+  </section>
+</section>
+<section class="detail" id="endpoint_available?/0">
+
+  <div class="detail-header">
+    <a href="#endpoint_available?/0" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">endpoint_available?()</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L72" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> endpoint_available?() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Checks if the Apollo AI service endpoint is reachable and responding.</p><p>Performs a connectivity test to ensure the external AI service is available
+before attempting to make actual queries.</p><h2 id="endpoint_available?/0-returns" class="section-heading"><a href="#endpoint_available?/0-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p><code class="inline">true</code> if the Apollo endpoint responds successfully, <code class="inline">false</code> otherwise.</p>
+  </section>
+</section>
+<section class="detail" id="enrich_session_with_job_context/1">
+
+  <div class="detail-header">
+    <a href="#enrich_session_with_job_context/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">enrich_session_with_job_context(session)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L637" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> enrich_session_with_job_context(<a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()) ::
+  <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()</pre>
+
+      </div>
+
+<p>Enriches a chat session with job-specific context.</p><p>Loads the associated job and enriches the session with:</p><ul><li>Job expression code and adaptor information</li><li>Run logs if following a specific run (via session.meta[&quot;follow_run_id&quot;])</li></ul><p>For unsaved jobs (job_id is nil), uses job data from session.meta.</p><h2 id="enrich_session_with_job_context/1-parameters" class="section-heading"><a href="#enrich_session_with_job_context/1-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">session</code> - The chat session to enrich</li></ul><h2 id="enrich_session_with_job_context/1-returns" class="section-heading"><a href="#enrich_session_with_job_context/1-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p>The enriched session with job context loaded</p>
+  </section>
+</section>
+<section class="detail" id="find_pending_user_messages/1">
+
+  <div class="detail-header">
+    <a href="#find_pending_user_messages/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">find_pending_user_messages(session)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L886" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> find_pending_user_messages(<a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()) :: [
+  <a href="Lightning.AiAssistant.ChatMessage.html#t:t/0">Lightning.AiAssistant.ChatMessage.t</a>()
+]</pre>
+
+      </div>
+
+<p>Finds all pending user messages in a chat session.</p><p>Retrieves messages that have been sent by users but are still waiting
+for processing or AI responses. Useful for identifying stuck or failed requests.</p><h2 id="find_pending_user_messages/1-parameters" class="section-heading"><a href="#find_pending_user_messages/1-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">session</code> - The <code class="inline">%ChatSession{}</code> to search</li></ul><h2 id="find_pending_user_messages/1-returns" class="section-heading"><a href="#find_pending_user_messages/1-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p>List of <code class="inline">%ChatMessage{}</code> structs with <code class="inline">:role</code> of <code class="inline">:user</code> and <code class="inline">:status</code> of <code class="inline">:pending</code>.</p>
+  </section>
+</section>
+<section class="detail" id="get_session/1">
+
+  <div class="detail-header">
+    <a href="#get_session/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">get_session(id)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L492" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="get_session!/1">
+
+  <div class="detail-header">
+    <a href="#get_session!/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">get_session!(id)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L479" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Retrieves a chat session by ID with all related data preloaded.</p><p>Fetches a complete chat session including:</p><ul><li>All non-cancelled messages ordered by creation time</li><li>User information for each message</li><li>Session metadata</li><li>Project information (for workflow template sessions)</li></ul><h2 id="get_session!/1-parameters" class="section-heading"><a href="#get_session!/1-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">id</code> - UUID string of the session to retrieve</li></ul><h2 id="get_session!/1-returns" class="section-heading"><a href="#get_session!/1-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p>A <code class="inline">ChatSession</code> struct with preloaded <code class="inline">:messages</code> and nested <code class="inline">:user</code> data.
+For workflow template sessions, the <code class="inline">:project</code> association is also preloaded.</p><h2 id="get_session!/1-raises" class="section-heading"><a href="#get_session!/1-raises" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Raises</span></h2><p><a href="https://hexdocs.pm/ecto/3.13.2/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> if no session exists with the given ID.</p>
+  </section>
+</section>
+<section class="detail" id="has_more_sessions?/2">
+
+  <div class="detail-header">
+    <a href="#has_more_sessions?/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">has_more_sessions?(resource, current_count)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L587" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> has_more_sessions?(
+  <a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>() | <a href="Lightning.Workflows.Job.html#t:t/0">Lightning.Workflows.Job.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()
+) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Checks if additional sessions are available beyond the current count.</p><p>This is a convenience function to determine if there are more sessions
+to load without fetching the actual data. Useful for &quot;Load More&quot; UI patterns.</p><h2 id="has_more_sessions?/2-parameters" class="section-heading"><a href="#has_more_sessions?/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">resource</code> - A <code class="inline">%Project{}</code> or <code class="inline">%Job{}</code> struct</li><li><code class="inline">current_count</code> - Number of sessions already loaded</li></ul><h2 id="has_more_sessions?/2-returns" class="section-heading"><a href="#has_more_sessions?/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p><code class="inline">true</code> if more sessions exist, <code class="inline">false</code> otherwise.</p>
+  </section>
+</section>
+<section class="detail" id="list_sessions/3">
+
+    <span id="list_sessions/1"></span>
+
+    <span id="list_sessions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_sessions/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">list_sessions(resource, sort_direction \\ :desc, opts \\ [])</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L536" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_sessions(
+  <a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>() | <a href="Lightning.Workflows.Job.html#t:t/0">Lightning.Workflows.Job.t</a>(),
+  :asc | :desc,
+  <a href="#t:opts/0">opts</a>()
+) ::
+  %{
+    sessions: [<a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()],
+    pagination: <a href="LightningWeb.Live.AiAssistant.PaginationMeta.html#t:t/0">LightningWeb.Live.AiAssistant.PaginationMeta.t</a>()
+  }</pre>
+
+      </div>
+
+<p>Returns paginated chat sessions with metadata for improved user experience.</p><p>Retrieves chat sessions associated with either a Project (workflow template sessions)
+or a Job (job-specific sessions). Results are paginated and include total counts
+and navigation metadata.</p><h2 id="list_sessions/3-parameters" class="section-heading"><a href="#list_sessions/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">resource</code> - A <code class="inline">%Project{}</code>, <code class="inline">%Job{}</code>, or <code class="inline">%Snapshot.Job{}</code> struct to filter sessions by</li><li><code class="inline">sort_direction</code> - Sort order, either <code class="inline">:asc</code> or <code class="inline">:desc</code> (default: <code class="inline">:desc</code>)</li><li><code class="inline">opts</code> - Keyword list of options:<ul><li><code class="inline">:offset</code> - Number of records to skip (default: 0)</li><li><code class="inline">:limit</code> - Maximum number of records to return (default: 20)</li></ul></li></ul><h2 id="list_sessions/3-returns" class="section-heading"><a href="#list_sessions/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p>A map containing:</p><ul><li><code class="inline">:sessions</code> - List of <code class="inline">ChatSession</code> structs with preloaded data</li><li><code class="inline">:pagination</code> - <code class="inline">PaginationMeta</code> struct with navigation information</li></ul>
+  </section>
+</section>
+<section class="detail" id="mark_disclaimer_read/1">
+
+  <div class="detail-header">
+    <a href="#mark_disclaimer_read/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">mark_disclaimer_read(user)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L124" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> mark_disclaimer_read(<a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>()) ::
+  {:ok, <a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>()}</pre>
+
+      </div>
+
+<p>Records that a user has read and accepted the AI assistant disclaimer.</p><p>Updates the user's preferences with a timestamp indicating when they
+acknowledged the AI assistant terms and conditions.</p><h2 id="mark_disclaimer_read/1-parameters" class="section-heading"><a href="#mark_disclaimer_read/1-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">user</code> - The <code class="inline">%User{}</code> who read the disclaimer</li></ul><h2 id="mark_disclaimer_read/1-returns" class="section-heading"><a href="#mark_disclaimer_read/1-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p><code class="inline">{:ok, user}</code> - Successfully recorded disclaimer acceptance.</p>
+  </section>
+</section>
+<section class="detail" id="put_expression_and_adaptor/3">
+
+  <div class="detail-header">
+    <a href="#put_expression_and_adaptor/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">put_expression_and_adaptor(session, expression, adaptor)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L613" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> put_expression_and_adaptor(
+  <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()
+) ::
+  <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()</pre>
+
+      </div>
+
+<p>Adds job-specific context to a chat session for enhanced AI assistance.</p><p>Enriches a session with the job's expression code and adaptor information,
+enabling the AI to provide more targeted and relevant assistance.</p><h2 id="put_expression_and_adaptor/3-parameters" class="section-heading"><a href="#put_expression_and_adaptor/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">session</code> - The <code class="inline">%ChatSession{}</code> to enhance</li><li><code class="inline">expression</code> - The job's expression code as a string</li><li><code class="inline">adaptor</code> - The adaptor name/identifier for the job</li></ul><h2 id="put_expression_and_adaptor/3-returns" class="section-heading"><a href="#put_expression_and_adaptor/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p>An updated <code class="inline">ChatSession</code> struct with <code class="inline">:expression</code> and <code class="inline">:adaptor</code> fields populated.
+The adaptor is resolved through <a href="Lightning.AdaptorRegistry.html"><code class="inline">Lightning.AdaptorRegistry</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="query/3">
+
+    <span id="query/2"></span>
+
+  <div class="detail-header">
+    <a href="#query/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">query(session, content, opts \\ [])</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L910" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> query(<a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="#t:opts/0">opts</a>()) ::
+  {:ok, <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Queries the AI assistant for job-specific code assistance.</p><p>Sends a user query to the Apollo AI service along with job context (expression and adaptor)
+and conversation history. The AI provides targeted assistance for coding tasks, debugging,
+and adaptor-specific guidance.</p><h2 id="query/3-parameters" class="section-heading"><a href="#query/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">session</code> - The job-specific <code class="inline">%ChatSession{}</code> with expression and adaptor context</li><li><code class="inline">content</code> - User's question or request for assistance</li></ul><h2 id="query/3-returns" class="section-heading"><a href="#query/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, session}</code> - AI responded successfully, session updated with response</li><li><code class="inline">{:error, reason}</code> - Query failed, reason is either a string error message or changeset</li></ul>
+  </section>
+</section>
+<section class="detail" id="query_stream/3">
+
+    <span id="query_stream/2"></span>
+
+  <div class="detail-header">
+    <a href="#query_stream/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">query_stream(session, content, opts \\ [])</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L942" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> query_stream(<a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="#t:opts/0">opts</a>()) ::
+  {:ok, <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Queries the AI service for job assistance with streaming.</p><p>Same as <a href="#query/3"><code class="inline">query/3</code></a> but uses SSE streaming. Text chunks and status updates
+are broadcast via PubSub as they arrive. The complete message is saved
+to the database when the stream finishes.</p>
+  </section>
+</section>
+<section class="detail" id="query_workflow/3">
+
+    <span id="query_workflow/2"></span>
+
+  <div class="detail-header">
+    <a href="#query_workflow/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">query_workflow(session, content, opts \\ [])</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L1015" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> query_workflow(<a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="#t:opts/0">opts</a>()) ::
+  {:ok, <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Queries the AI service for workflow template generation.</p><p>Sends a request to generate or modify workflow templates based on user requirements.
+Can include validation errors from previous attempts to help the AI provide corrections.</p><h2 id="query_workflow/3-parameters" class="section-heading"><a href="#query_workflow/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">session</code> - The workflow template <code class="inline">%ChatSession{}</code></li><li><code class="inline">content</code> - User's description of desired workflow functionality or modifications</li><li><code class="inline">opts</code> - Keyword list of options:<ul><li><code class="inline">:code</code> - Current YAML to modify (default: uses latest from session)</li><li><code class="inline">:errors</code> - Validation errors from previous workflow attempts</li><li><code class="inline">:meta</code> - Additional metadata to pass to the AI service (default: session.meta)</li></ul></li></ul><h2 id="query_workflow/3-returns" class="section-heading"><a href="#query_workflow/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, session}</code> - Workflow template generated successfully</li><li><code class="inline">{:error, reason}</code> - Generation failed, reason is either a string error message or changeset</li></ul>
+  </section>
+</section>
+<section class="detail" id="query_workflow_stream/3">
+
+    <span id="query_workflow_stream/2"></span>
+
+  <div class="detail-header">
+    <a href="#query_workflow_stream/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">query_workflow_stream(session, content, opts \\ [])</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L1039" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> query_workflow_stream(<a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="#t:opts/0">opts</a>()) ::
+  {:ok, <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Queries the AI service for workflow template generation with streaming.</p><p>Same as <a href="#query_workflow/3"><code class="inline">query_workflow/3</code></a> but uses SSE streaming.</p>
+  </section>
+</section>
+<section class="detail" id="retry_message/1">
+
+  <div class="detail-header">
+    <a href="#retry_message/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">retry_message(message)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L1065" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Resets a message status to pending and enqueues it for reprocessing.
+Handles both the database update and Oban job creation atomically.</p>
+  </section>
+</section>
+<section class="detail" id="save_message/3">
+
+    <span id="save_message/2"></span>
+
+  <div class="detail-header">
+    <a href="#save_message/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">save_message(session, message_attrs, opts \\ [])</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L749" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> save_message(<a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), <a href="#t:opts/0">opts</a>()) ::
+  {:ok, <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Saves a message to an existing chat session.</p><p>Adds a new message to the session's message history and updates the session.
+For assistant messages, this also triggers AI usage tracking and limit enforcement.</p><h2 id="save_message/3-parameters" class="section-heading"><a href="#save_message/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">session</code> - The target <code class="inline">%ChatSession{}</code></li><li><code class="inline">message_attrs</code> - Map containing message data with keys like <code class="inline">:role</code>, <code class="inline">:content</code>, <code class="inline">:user</code></li><li><code class="inline">opts</code> - Keyword list of options:<ul><li><code class="inline">:usage</code> - Map containing AI usage metrics (default: <code class="inline">%{}</code>)</li><li><code class="inline">:meta</code> - Session metadata to update (default: keeps existing)</li><li><code class="inline">:code</code> - Optional workflow code to attach to the message</li></ul></li></ul><h2 id="save_message/3-returns" class="section-heading"><a href="#save_message/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, session}</code> - Successfully saved message and updated session</li><li><code class="inline">{:error, changeset}</code> - Validation or database errors</li></ul>
+  </section>
+</section>
+<section class="detail" id="title_max_length/0">
+
+  <div class="detail-header">
+    <a href="#title_max_length/0" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">title_max_length()</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L42" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> title_max_length() :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()</pre>
+
+      </div>
+
+<p>Returns the maximum allowed length for chat session titles.</p>
+  </section>
+</section>
+<section class="detail" id="update_message_status/3">
+
+  <div class="detail-header">
+    <a href="#update_message_status/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">update_message_status(session, message, status)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L857" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_message_status(
+  <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>(),
+  <a href="Lightning.AiAssistant.ChatMessage.html#t:t/0">Lightning.AiAssistant.ChatMessage.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>()
+) :: {:ok, <a href="Lightning.AiAssistant.ChatSession.html#t:t/0">Lightning.AiAssistant.ChatSession.t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Updates the status of a specific message within a chat session.</p><p>Changes the status of an individual message (e.g., from <code class="inline">:pending</code> to <code class="inline">:success</code> or <code class="inline">:error</code>)
+and returns the refreshed session with updated data.</p><h2 id="update_message_status/3-parameters" class="section-heading"><a href="#update_message_status/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">session</code> - The <code class="inline">%ChatSession{}</code> containing the message</li><li><code class="inline">message</code> - The specific <code class="inline">%ChatMessage{}</code> to update</li><li><code class="inline">status</code> - New status atom (e.g., <code class="inline">:pending</code>, <code class="inline">:success</code>, <code class="inline">:error</code>, <code class="inline">:cancelled</code>)</li></ul><h2 id="update_message_status/3-returns" class="section-heading"><a href="#update_message_status/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, session}</code> - Successfully updated message, returns refreshed session</li><li><code class="inline">{:error, changeset}</code> - Update failed with validation errors</li></ul>
+  </section>
+</section>
+<section class="detail" id="user_has_read_disclaimer?/1">
+
+  <div class="detail-header">
+    <a href="#user_has_read_disclaimer?/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">user_has_read_disclaimer?(user)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/ai_assistant/ai_assistant.ex#L91" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> user_has_read_disclaimer?(<a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Checks if a user has acknowledged the AI assistant disclaimer recently.</p><p>Verifies that the user has read and accepted the AI assistant terms and conditions
+within the last 24 hours. This ensures users are aware of AI limitations and usage terms.</p><h2 id="user_has_read_disclaimer?/1-parameters" class="section-heading"><a href="#user_has_read_disclaimer?/1-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">user</code> - The <code class="inline">%User{}</code> struct to check</li></ul><h2 id="user_has_read_disclaimer?/1-returns" class="section-heading"><a href="#user_has_read_disclaimer?/1-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p><code class="inline">true</code> if disclaimer was read within 24 hours, <code class="inline">false</code> otherwise.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+    <footer class="footer">
+
+        <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+              Go to package docs
+            </button>
+
+              <a href="Lightning.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.3) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.39.3">
+    <meta name="project" content="Lightning v2.16.1-pre1">
+
+
+    <title>Lightning.Collaboration.Session — Lightning v2.16.1-pre1</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-VYWJUHZE.css" />
+
+    <script defer src="dist/sidebar_items-BC0EF6CC.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectImage">
+          <img src="assets/logo.png" alt="Lightning" />
+        </a>
+
+      <div>
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectName" translate="no">
+Lightning
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v2.16.1-pre1
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras=""></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-module" id="main" data-type="modules">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Lightning</span>
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
+          </label>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>
+      <span translate="no">Lightning.Collaboration.Session</span> 
+      <small class="app-vsn" translate="no">(Lightning v2.16.1-pre1)</small>
+
+    </h1>
+
+      <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+  </div>
+
+
+    <section id="moduledoc">
+<p>Manages individual user sessions for collaborative workflow editing.</p><p>A Session acts as a bridge between a parent process (typically a Phoenix
+channel) and a SharedDoc process that manages the Y.js CRDT document. Each
+user editing a workflow has their own Session process that handles:</p><ul><li>User presence tracking via <a href="Lightning.Workflows.Presence.html"><code class="inline">Lightning.Workflows.Presence</code></a></li><li>Bi-directional Y.js message routing between parent and SharedDoc</li><li>Connection management to existing SharedDoc processes via Registry lookup</li><li>Workflow document initialization with database data when needed</li><li>Cleanup when the parent process disconnects</li></ul><p>Sessions are temporary processes that monitor their parent and terminate
+when the parent disconnects, ensuring proper cleanup of presence tracking
+and SharedDoc observers.</p>
+    </section>
+
+</div>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:start_opts/0" data-no-tooltip="" translate="no">start_opts()</a>
+
+      </div>
+
+    </div>
+
+</div>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#child_spec/1" data-no-tooltip="" translate="no">child_spec(init_arg)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns a specification to start this module under a supervisor.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_doc/1" data-no-tooltip="" translate="no">get_doc(session_pid)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Get the current document.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#initialize_workflow_document/2" data-no-tooltip="" translate="no">initialize_workflow_document(doc, workflow)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#lookup_shared_doc/1" data-no-tooltip="" translate="no">lookup_shared_doc(document_name)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#reset_workflow/2" data-no-tooltip="" translate="no">reset_workflow(session_pid, user)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Resets the workflow document to the latest snapshot from the database.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#save_workflow/2" data-no-tooltip="" translate="no">save_workflow(session_pid, user)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Saves the current workflow state from the Y.Doc to the database.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#send_yjs_message/2" data-no-tooltip="" translate="no">send_yjs_message(session_pid, chunk)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#start_link/2" data-no-tooltip="" translate="no">start_link(args, opt \\ [])</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#start_sync/2" data-no-tooltip="" translate="no">start_sync(session_pid, chunk)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#stop/1" data-no-tooltip="" translate="no">stop(session_pid)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Start a new session for a workflow.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#stop_shared_doc/1" data-no-tooltip="" translate="no">stop_shared_doc(session_pid)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update_doc/2" data-no-tooltip="" translate="no">update_doc(session_pid, fun)</a>
+
+      </div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Types</span>
+    </h1>
+
+    <div class="types-list">
+<section class="detail" id="t:start_opts/0">
+
+  <div class="detail-header">
+    <a href="#t:start_opts/0" class="detail-link" data-no-tooltip="" aria-label="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">start_opts()</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L42" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> start_opts() :: [
+  workflow: <a href="Lightning.Workflows.Workflow.html#t:t/0">Lightning.Workflows.Workflow.t</a>(),
+  user: <a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>(),
+  parent_pid: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pid</a>()
+]</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+
+    <div class="functions-list">
+<section class="detail" id="child_spec/1">
+
+  <div class="detail-header">
+    <a href="#child_spec/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">child_spec(init_arg)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L72" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Returns a specification to start this module under a supervisor.</p><p>See <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="get_doc/1">
+
+  <div class="detail-header">
+    <a href="#get_doc/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">get_doc(session_pid)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L166" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Get the current document.</p>
+  </section>
+</section>
+<section class="detail" id="initialize_workflow_document/2">
+
+  <div class="detail-header">
+    <a href="#initialize_workflow_document/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">initialize_workflow_document(doc, workflow)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L444" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="lookup_shared_doc/1">
+
+  <div class="detail-header">
+    <a href="#lookup_shared_doc/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">lookup_shared_doc(document_name)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L156" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="reset_workflow/2">
+
+  <div class="detail-header">
+    <a href="#reset_workflow/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">reset_workflow(session_pid, user)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L258" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> reset_workflow(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pid</a>(), <a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>()) ::
+  {:ok, <a href="Lightning.Workflows.Workflow.html#t:t/0">Lightning.Workflows.Workflow.t</a>()}
+  | {:error, :workflow_deleted | :internal_error}</pre>
+
+      </div>
+
+<p>Resets the workflow document to the latest snapshot from the database.</p><p>This operation:</p><ol><li>Fetches the latest workflow from the database</li><li>Clears all Y.Doc collections (jobs, edges, triggers arrays)</li><li>Re-serializes the workflow to the Y.Doc</li><li>Broadcasts updates to all connected clients via SharedDoc</li></ol><p>All collaborative editing history in the Y.Doc is preserved (operation log),
+but the document content is replaced with the database state.</p><h2 id="reset_workflow/2-parameters" class="section-heading"><a href="#reset_workflow/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">session_pid</code>: The Session process PID</li><li><code class="inline">user</code>: The user performing the reset (for authorization logging)</li></ul><h2 id="reset_workflow/2-returns" class="section-heading"><a href="#reset_workflow/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, workflow}</code> - Successfully reset with updated workflow</li><li><code class="inline">{:error, :workflow_deleted}</code> - Workflow has been deleted from database</li><li><code class="inline">{:error, :internal_error}</code> - SharedDoc not available</li></ul><h2 id="reset_workflow/2-examples" class="section-heading"><a href="#reset_workflow/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Session</span><span class="o">.</span><span class="n">reset_workflow</span><span class="p" data-group-id="3189207630-1">(</span><span class="n">session_pid</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p" data-group-id="3189207630-1">)</span><span class="w">
+</span><span class="p" data-group-id="3189207630-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3189207630-3">%</span><span class="nc" data-group-id="3189207630-3">Workflow</span><span class="p" data-group-id="3189207630-3">{</span><span class="ss">lock_version</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="3189207630-3">}</span><span class="p" data-group-id="3189207630-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Session</span><span class="o">.</span><span class="n">reset_workflow</span><span class="p" data-group-id="3189207630-4">(</span><span class="n">session_pid</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p" data-group-id="3189207630-4">)</span><span class="w">
+</span><span class="p" data-group-id="3189207630-5">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="ss">:workflow_deleted</span><span class="p" data-group-id="3189207630-5">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="save_workflow/2">
+
+  <div class="detail-header">
+    <a href="#save_workflow/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">save_workflow(session_pid, user)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L222" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> save_workflow(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pid</a>(), <a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>()) ::
+  {:ok, <a href="Lightning.Workflows.Workflow.html#t:t/0">Lightning.Workflows.Workflow.t</a>()}
+  | {:error,
+     :workflow_deleted
+     | :deserialization_failed
+     | :internal_error
+     | <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Saves the current workflow state from the Y.Doc to the database.</p><p>This function:</p><ol><li>Extracts the current workflow data from the SharedDoc's Y.Doc</li><li>Converts Y.js types to Elixir maps suitable for Ecto</li><li>Calls Lightning.Workflows.save_workflow/3 for validation and persistence</li><li>Returns the saved workflow</li></ol><p>Note: This assumes all Y.js updates have been processed before this call,
+which is guaranteed by Phoenix Channel's synchronous message handling.</p><h2 id="save_workflow/2-parameters" class="section-heading"><a href="#save_workflow/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">session_pid</code>: The Session process PID</li><li><code class="inline">user</code>: The user performing the save (for authorization and auditing)</li></ul><h2 id="save_workflow/2-returns" class="section-heading"><a href="#save_workflow/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, workflow}</code> - Successfully saved</li><li><code class="inline">{:error, :workflow_deleted}</code> - Workflow has been deleted</li><li><code class="inline">{:error, changeset}</code> - Validation or persistence error</li></ul><h2 id="save_workflow/2-examples" class="section-heading"><a href="#save_workflow/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Session</span><span class="o">.</span><span class="n">save_workflow</span><span class="p" data-group-id="8905069023-1">(</span><span class="n">session_pid</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p" data-group-id="8905069023-1">)</span><span class="w">
+</span><span class="p" data-group-id="8905069023-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8905069023-3">%</span><span class="nc" data-group-id="8905069023-3">Workflow</span><span class="p" data-group-id="8905069023-3">{</span><span class="p" data-group-id="8905069023-3">}</span><span class="p" data-group-id="8905069023-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Session</span><span class="o">.</span><span class="n">save_workflow</span><span class="p" data-group-id="8905069023-4">(</span><span class="n">session_pid</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p" data-group-id="8905069023-4">)</span><span class="w">
+</span><span class="p" data-group-id="8905069023-5">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8905069023-6">%</span><span class="nc" data-group-id="8905069023-6">Ecto.Changeset</span><span class="p" data-group-id="8905069023-6">{</span><span class="p" data-group-id="8905069023-6">}</span><span class="p" data-group-id="8905069023-5">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="send_yjs_message/2">
+
+  <div class="detail-header">
+    <a href="#send_yjs_message/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">send_yjs_message(session_pid, chunk)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L182" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="start_link/2">
+
+    <span id="start_link/1"></span>
+
+  <div class="detail-header">
+    <a href="#start_link/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">start_link(args, opt \\ [])</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L86" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="start_sync/2">
+
+  <div class="detail-header">
+    <a href="#start_sync/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">start_sync(session_pid, chunk)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L178" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="stop/1">
+
+  <div class="detail-header">
+    <a href="#stop/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">stop(session_pid)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L68" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Start a new session for a workflow.</p><p>The session will be started as a child of the <code class="inline">Collaboration.Supervisor</code>.</p><h2 id="stop/1-options" class="section-heading"><a href="#stop/1-options" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Options</span></h2><ul><li><code class="inline">workflow</code> - The workflow struct to start the session for.</li><li><code class="inline">user</code> - The user to start the session for.</li><li><code class="inline">parent_pid</code> - The pid of the parent process.
+ Defaults to the current process.</li></ul>
+  </section>
+</section>
+<section class="detail" id="stop_shared_doc/1">
+
+  <div class="detail-header">
+    <a href="#stop_shared_doc/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">stop_shared_doc(session_pid)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L170" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="update_doc/2">
+
+  <div class="detail-header">
+    <a href="#update_doc/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">update_doc(session_pid, fun)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/collaboration/session.ex#L174" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+    <footer class="footer">
+
+        <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+              Go to package docs
+            </button>
+
+              <a href="Lightning.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.3) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>

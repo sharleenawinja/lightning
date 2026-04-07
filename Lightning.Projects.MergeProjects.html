@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.39.3">
+    <meta name="project" content="Lightning v2.16.1-pre1">
+
+
+    <title>Lightning.Projects.MergeProjects — Lightning v2.16.1-pre1</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-VYWJUHZE.css" />
+
+    <script defer src="dist/sidebar_items-BC0EF6CC.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectImage">
+          <img src="assets/logo.png" alt="Lightning" />
+        </a>
+
+      <div>
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectName" translate="no">
+Lightning
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v2.16.1-pre1
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras=""></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-module" id="main" data-type="modules">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Lightning</span>
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
+          </label>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>
+      <span translate="no">Lightning.Projects.MergeProjects</span> 
+      <small class="app-vsn" translate="no">(Lightning v2.16.1-pre1)</small>
+
+    </h1>
+
+      <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/projects/merge_projects.ex#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+  </div>
+
+
+    <section id="moduledoc">
+<p>Responsible for merging 2 different projects. Used by sandboxes to merge
+sandbox workflows back onto their parent workflows.</p>
+    </section>
+
+</div>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#diverged_workflows/2" data-no-tooltip="" translate="no">diverged_workflows(source_project, target_project)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the list of workflow names that have diverged between source and target projects.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#has_diverged?/2" data-no-tooltip="" translate="no">has_diverged?(source_project, target_project)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Checks if the target project has diverged from the source sandbox.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#merge_project/3" data-no-tooltip="" translate="no">merge_project(source, target, opts \\ %{})</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Merges a source project onto a target project using workflow name matching.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#merge_workflow/3" data-no-tooltip="" translate="no">merge_workflow(source, target, new_uuid_map \\ %{})</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Merges a sandbox workflow back onto its parent workflow using UUID mapping.</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+
+    <div class="functions-list">
+<section class="detail" id="diverged_workflows/2">
+
+  <div class="detail-header">
+    <a href="#diverged_workflows/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">diverged_workflows(source_project, target_project)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/projects/merge_projects.ex#L964" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> diverged_workflows(
+  <a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>(),
+  <a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>()
+) :: [<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()]</pre>
+
+      </div>
+
+<p>Returns the list of workflow names that have diverged between source and target projects.</p><p>A workflow is considered diverged when the target project (parent) has changed since the
+sandbox was forked. Specifically, a workflow has diverged if the target's current HEAD
+version is not present in the sandbox's version history.</p><h2 id="diverged_workflows/2-parameters" class="section-heading"><a href="#diverged_workflows/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">source_project</code> - The sandbox project</li><li><code class="inline">target_project</code> - The target project to compare against</li></ul><h2 id="diverged_workflows/2-returns" class="section-heading"><a href="#diverged_workflows/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li>List of workflow names (strings) that have diverged</li><li>Empty list if no workflows have diverged</li></ul><h2 id="diverged_workflows/2-examples" class="section-heading"><a href="#diverged_workflows/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">MergeProjects</span><span class="o">.</span><span class="n">diverged_workflows</span><span class="p" data-group-id="3827228970-1">(</span><span class="n">sandbox</span><span class="p">,</span><span class="w"> </span><span class="n">parent</span><span class="p" data-group-id="3827228970-1">)</span><span class="w">
+</span><span class="p" data-group-id="3827228970-2">[</span><span class="s">&quot;Payment Processing&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Data Sync&quot;</span><span class="p" data-group-id="3827228970-2">]</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">MergeProjects</span><span class="o">.</span><span class="n">diverged_workflows</span><span class="p" data-group-id="3827228970-3">(</span><span class="n">sandbox</span><span class="p">,</span><span class="w"> </span><span class="n">parent</span><span class="p" data-group-id="3827228970-3">)</span><span class="w">
+</span><span class="p" data-group-id="3827228970-4">[</span><span class="p" data-group-id="3827228970-4">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="has_diverged?/2">
+
+  <div class="detail-header">
+    <a href="#has_diverged?/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">has_diverged?(source_project, target_project)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/projects/merge_projects.ex#L933" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> has_diverged?(<a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>(), <a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>()) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Checks if the target project has diverged from the source sandbox.</p><p>Divergence occurs when any workflow in the target project has a different
+version hash compared to when the source sandbox was created. This indicates
+that changes have been made to the target that the sandbox doesn't know about,
+which could lead to data loss during merge.</p><h2 id="has_diverged?/2-parameters" class="section-heading"><a href="#has_diverged?/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">source_project</code> - The sandbox project with workflows</li><li><code class="inline">target_project</code> - The target project to check with workflows</li></ul><h2 id="has_diverged?/2-returns" class="section-heading"><a href="#has_diverged?/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">true</code> if the target has diverged (workflow versions differ)</li><li><code class="inline">false</code> if no divergence detected</li></ul>
+  </section>
+</section>
+<section class="detail" id="merge_project/3">
+
+    <span id="merge_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#merge_project/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">merge_project(source, target, opts \\ %{})</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/projects/merge_projects.ex#L38" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> merge_project(
+  <a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>(),
+  <a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
+
+      </div>
+
+<p>Merges a source project onto a target project using workflow name matching.</p><p>Maps workflows from source to target project based on exact name matching.
+Uses the existing merge_workflow/2 logic for individual workflow merging.
+Workflows that don't match are marked for deletion (target) or creation
+(source).</p><h2 id="merge_project/3-parameters" class="section-heading"><a href="#merge_project/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">source_project</code> - The project with modifications to merge</li><li><code class="inline">target_project</code> - The target project to merge changes onto</li><li><code class="inline">opts</code> - Keyword options:<ul><li><code class="inline">:new_uuid_map</code> - Map of source UUID to target UUID (default: <code class="inline">%{}</code>)</li><li><code class="inline">:selected_workflow_ids</code> - List of source workflow IDs to merge.
+When provided, only those source workflows are processed and no target
+workflows are marked for deletion. When <code class="inline">nil</code> (default), all source
+workflows are processed and unmatched target workflows are deleted.</li></ul></li></ul><h2 id="merge_project/3-returns" class="section-heading"><a href="#merge_project/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p>  A map with the merged project structure ready for import, containing
+  workflow mappings and project data.</p>
+  </section>
+</section>
+<section class="detail" id="merge_workflow/3">
+
+    <span id="merge_workflow/2"></span>
+
+  <div class="detail-header">
+    <a href="#merge_workflow/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">merge_workflow(source, target, new_uuid_map \\ %{})</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/projects/merge_projects.ex#L100" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> merge_workflow(
+  <a href="Lightning.Workflows.Workflow.html#t:t/0">Lightning.Workflows.Workflow.t</a>(),
+  <a href="Lightning.Workflows.Workflow.html#t:t/0">Lightning.Workflows.Workflow.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
+
+      </div>
+
+<p>Merges a sandbox workflow back onto its parent workflow using UUID mapping.</p><p>Maps nodes and edges from source to target workflow, preserving UUIDs where
+possible when merging two workflows (likely one is a fork of the other).</p><p>The algorithm follows these phases:</p><ol><li>Direct ID Matching - matches nodes with identical IDs</li><li>Root Node Mapping - always maps root nodes</li><li>Structural and Expression Matching - iterative matching using parents, children, and expression</li><li>Edge Mapping - maps edges based on node mappings</li></ol><h2 id="merge_workflow/3-parameters" class="section-heading"><a href="#merge_workflow/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">source_workflow</code> - The sandbox workflow with modifications (i.e staging)</li><li><code class="inline">target_workflow</code> - The parent workflow to merge changes onto (i.e main)</li></ul><h2 id="merge_workflow/3-returns" class="section-heading"><a href="#merge_workflow/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p>  A map with the merged workflow structure ready for import, containing
+  UUID mappings and workflow data.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+    <footer class="footer">
+
+        <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+              Go to package docs
+            </button>
+
+              <a href="Lightning.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.3) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.39.3">
+    <meta name="project" content="Lightning v2.16.1-pre1">
+
+
+    <title>LightningWeb.Pagination — Lightning v2.16.1-pre1</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-VYWJUHZE.css" />
+
+    <script defer src="dist/sidebar_items-BC0EF6CC.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectImage">
+          <img src="assets/logo.png" alt="Lightning" />
+        </a>
+
+      <div>
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectName" translate="no">
+Lightning
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v2.16.1-pre1
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras=""></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-module" id="main" data-type="modules">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Lightning</span>
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
+          </label>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>
+      <span translate="no">LightningWeb.Pagination</span> 
+      <small class="app-vsn" translate="no">(Lightning v2.16.1-pre1)</small>
+
+    </h1>
+
+      <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning_web/pagination.ex#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+  </div>
+
+
+    <section id="moduledoc">
+<p>Pagination Components</p><p>This has been extracted and adapted from <code class="inline">scrivener_html</code>.
+See: <a href="https://github.com/mgwidmann/scrivener_html">https://github.com/mgwidmann/scrivener_html</a></p>
+    </section>
+
+</div>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#page_link/1" data-no-tooltip="" translate="no">page_link(assigns)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#pagination_bar/1" data-no-tooltip="" translate="no">pagination_bar(assigns)</a>
+
+      </div>
+
+        <div class="summary-synopsis"></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#raw_pagination_links/2" data-no-tooltip="" translate="no">raw_pagination_links(paginator, options \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the raw data in order to generate the proper HTML for pagination links. Data
+is returned in a <code class="inline">{text, page_number}</code> format where <code class="inline">text</code> is intended to be the text
+of the link and <code class="inline">page_number</code> is the page it should go to. Defaults are already supplied
+and they are as follows</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+
+    <div class="functions-list">
+<section class="detail" id="page_link/1">
+
+  <div class="detail-header">
+    <a href="#page_link/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">page_link(assigns)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning_web/pagination.ex#L159" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="pagination_bar/1">
+
+  <div class="detail-header">
+    <a href="#pagination_bar/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">pagination_bar(assigns)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning_web/pagination.ex#L103" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<h2 id="pagination_bar/1-attributes" class="section-heading"><a href="#pagination_bar/1-attributes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Attributes</span></h2><ul><li><code class="inline">async_page</code> (<a href="https://hexdocs.pm/phoenix_live_view/1.0.18/Phoenix.LiveView.AsyncResult.html"><code class="inline">Phoenix.LiveView.AsyncResult</code></a>) - Defaults to <code class="inline">nil</code>.</li><li><code class="inline">page</code> (<code class="inline">:map</code>) (required)</li><li><code class="inline">url</code> (<code class="inline">:any</code>) (required)</li><li><code class="inline">help_text</code> (<code class="inline">:string</code>) - Defaults to <code class="inline">nil</code>.</li><li><code class="inline">rounded</code> (<code class="inline">:string</code>) - Border radius size (sm, md, lg, xl, 2xl, etc.). Defaults to <code class="inline">&quot;lg&quot;</code>.</li></ul><h2 id="pagination_bar/1-slots" class="section-heading"><a href="#pagination_bar/1-slots" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Slots</span></h2><ul><li><code class="inline">action</code></li></ul>
+  </section>
+</section>
+<section class="detail" id="raw_pagination_links/2">
+
+    <span id="raw_pagination_links/1"></span>
+
+  <div class="detail-header">
+    <a href="#raw_pagination_links/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">raw_pagination_links(paginator, options \\ [])</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning_web/pagination.ex#L35" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Returns the raw data in order to generate the proper HTML for pagination links. Data
+is returned in a <code class="inline">{text, page_number}</code> format where <code class="inline">text</code> is intended to be the text
+of the link and <code class="inline">page_number</code> is the page it should go to. Defaults are already supplied
+and they are as follows:</p><pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="9749262619-1">[</span><span class="ss">distance</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="ss">next</span><span class="p">:</span><span class="w"> </span><span class="ss">:next</span><span class="p">,</span><span class="w"> </span><span class="ss">previous</span><span class="p">:</span><span class="w"> </span><span class="ss">:previous</span><span class="p">,</span><span class="w"> </span><span class="ss">first</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p">,</span><span class="w"> </span><span class="ss">last</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="p">,</span><span class="w"> </span><span class="ss">ellipsis</span><span class="p">:</span><span class="w"> </span><span class="ss">:ellipsis</span><span class="p" data-group-id="9749262619-1">]</span></code></pre><p><code class="inline">distance</code> must be a positive non-zero integer or an exception is raised. <code class="inline">next</code> and <code class="inline">previous</code> should be
+strings but can be anything you want as long as it is truthy, falsey values will remove
+them from the output. <code class="inline">first</code> and <code class="inline">last</code> are only booleans, and they just include/remove
+their respective link from output. An example of the data returned:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Scrivener.HTML</span><span class="o">.</span><span class="n">raw_pagination_links</span><span class="p" data-group-id="7393499933-1">(</span><span class="p" data-group-id="7393499933-2">%{</span><span class="ss">total_pages</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="ss">page_number</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="7393499933-2">}</span><span class="p" data-group-id="7393499933-1">)</span><span class="w">
+</span><span class="p" data-group-id="7393499933-3">[</span><span class="p" data-group-id="7393499933-4">{</span><span class="s">&quot;&lt;&lt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="7393499933-4">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-5">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="7393499933-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-6">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="7393499933-6">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-7">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="7393499933-7">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-8">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="7393499933-8">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-9">{</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="7393499933-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-10">{</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="7393499933-10">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-11">{</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p" data-group-id="7393499933-11">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-12">{</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="7393499933-12">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-13">{</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p" data-group-id="7393499933-13">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-14">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p" data-group-id="7393499933-14">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-15">{</span><span class="s">&quot;&gt;&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="7393499933-15">}</span><span class="p" data-group-id="7393499933-3">]</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Scrivener.HTML</span><span class="o">.</span><span class="n">raw_pagination_links</span><span class="p" data-group-id="7393499933-16">(</span><span class="p" data-group-id="7393499933-17">%{</span><span class="ss">total_pages</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="ss">page_number</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p" data-group-id="7393499933-17">}</span><span class="p">,</span><span class="w"> </span><span class="ss">first</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7393499933-18">[</span><span class="s">&quot;←&quot;</span><span class="p" data-group-id="7393499933-18">]</span><span class="p">,</span><span class="w"> </span><span class="ss">last</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7393499933-19">[</span><span class="s">&quot;→&quot;</span><span class="p" data-group-id="7393499933-19">]</span><span class="p" data-group-id="7393499933-16">)</span><span class="w">
+</span><span class="p" data-group-id="7393499933-20">[</span><span class="p" data-group-id="7393499933-21">{</span><span class="s">&quot;&lt;&lt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p" data-group-id="7393499933-21">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-22">{</span><span class="p" data-group-id="7393499933-23">[</span><span class="s">&quot;←&quot;</span><span class="p" data-group-id="7393499933-23">]</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="7393499933-22">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-24">{</span><span class="ss">:ellipsis</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-25">{</span><span class="ss">:safe</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&amp;hellip;&quot;</span><span class="p" data-group-id="7393499933-25">}</span><span class="p" data-group-id="7393499933-24">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-26">{</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="7393499933-26">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-27">{</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="7393499933-27">}</span><span class="p">,</span><span class="p" data-group-id="7393499933-28">{</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p" data-group-id="7393499933-28">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-29">{</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="7393499933-29">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-30">{</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p" data-group-id="7393499933-30">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-31">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p" data-group-id="7393499933-31">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-32">{</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p" data-group-id="7393499933-32">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-33">{</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="7393499933-33">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-34">{</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p" data-group-id="7393499933-34">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-35">{</span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p" data-group-id="7393499933-35">}</span><span class="p">,</span><span class="p" data-group-id="7393499933-36">{</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p" data-group-id="7393499933-36">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-37">{</span><span class="ss">:ellipsis</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-38">{</span><span class="ss">:safe</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&amp;hellip;&quot;</span><span class="p" data-group-id="7393499933-38">}</span><span class="p" data-group-id="7393499933-37">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-39">{</span><span class="p" data-group-id="7393499933-40">[</span><span class="s">&quot;→&quot;</span><span class="p" data-group-id="7393499933-40">]</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p" data-group-id="7393499933-39">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7393499933-41">{</span><span class="s">&quot;&gt;&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p" data-group-id="7393499933-41">}</span><span class="p" data-group-id="7393499933-20">]</span></code></pre><p>Simply loop and pattern match over each item and transform it to your custom HTML.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+    <footer class="footer">
+
+        <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+              Go to package docs
+            </button>
+
+              <a href="Lightning.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.3) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>

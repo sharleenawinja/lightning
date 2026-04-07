@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.39.3">
+    <meta name="project" content="Lightning v2.16.1-pre1">
+
+
+    <title>mix lightning.merge_projects — Lightning v2.16.1-pre1</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-VYWJUHZE.css" />
+
+    <script defer src="dist/sidebar_items-BC0EF6CC.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectImage">
+          <img src="assets/logo.png" alt="Lightning" />
+        </a>
+
+      <div>
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectName" translate="no">
+Lightning
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v2.16.1-pre1
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras=""></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-task" id="main" data-type="tasks">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Lightning</span>
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
+          </label>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>
+      <span translate="no">mix lightning.merge_projects</span> 
+      <small class="app-vsn" translate="no">(Lightning v2.16.1-pre1)</small>
+
+    </h1>
+
+      <a href="https://github.com/OpenFn/lightning/blob/main/lib/mix/tasks/merge_projects.ex#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+  </div>
+
+
+    <section id="moduledoc">
+<p>Merges two project state files (JSON) and outputs the result.</p><p>This task is useful for merging sandbox projects.
+It takes two state files (source and target) and produces a merged
+state that can be imported.</p><h2 id="module-usage" class="section-heading"><a href="#module-usage" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Usage</span></h2><pre><code class="makeup elixir" translate="no"><span class="n">mix</span><span class="w"> </span><span class="n">lightning</span><span class="o">.</span><span class="n">merge_projects</span><span class="w"> </span><span class="nc">SOURCE_FILE</span><span class="w"> </span><span class="nc">TARGET_FILE</span><span class="w"> </span><span class="p" data-group-id="0662610953-1">[</span><span class="nc">OPTIONS</span><span class="p" data-group-id="0662610953-1">]</span></code></pre><h2 id="module-arguments" class="section-heading"><a href="#module-arguments" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Arguments</span></h2><ul><li><code class="inline">SOURCE_FILE</code> - Path to the source project state JSON file</li><li><code class="inline">TARGET_FILE</code> - Path to the target project state JSON file</li></ul><h2 id="module-options" class="section-heading"><a href="#module-options" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Options</span></h2><ul><li><code class="inline">-o, --output PATH</code> - Write output to file instead of stdout</li><li><code class="inline">--uuid SOURCE_UUID:TARGET_UUID</code> - Map source UUID to target UUID for any entity (workflow, job, or edge) (repeatable)</li></ul><h2 id="module-examples" class="section-heading"><a href="#module-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="c1"># Merge staging into main, output to stdout</span><span class="w">
+</span><span class="n">mix</span><span class="w"> </span><span class="n">lightning</span><span class="o">.</span><span class="n">merge_projects</span><span class="w"> </span><span class="n">staging</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="n">main</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">json</span><span class="w">
+
+</span><span class="c1"># Merge and save to file</span><span class="w">
+</span><span class="n">mix</span><span class="w"> </span><span class="n">lightning</span><span class="o">.</span><span class="n">merge_projects</span><span class="w"> </span><span class="n">staging</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="n">main</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">merged</span><span class="o">.</span><span class="n">json</span><span class="w">
+
+</span><span class="c1"># Merge with explicit output flag</span><span class="w">
+</span><span class="n">mix</span><span class="w"> </span><span class="n">lightning</span><span class="o">.</span><span class="n">merge_projects</span><span class="w"> </span><span class="n">staging</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="n">main</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="o">--</span><span class="n">output</span><span class="w"> </span><span class="n">result</span><span class="o">.</span><span class="n">json</span><span class="w">
+
+</span><span class="c1"># Merge with UUID mappings for workflows, jobs, and edges</span><span class="w">
+</span><span class="n">mix</span><span class="w"> </span><span class="n">lightning</span><span class="o">.</span><span class="n">merge_projects</span><span class="w"> </span><span class="n">staging</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="n">main</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="err">\</span><span class="w">
+  </span><span class="o">--</span><span class="n">uuid</span><span class="w"> </span><span class="mi">550</span><span class="n">e8400</span><span class="o">-</span><span class="n">e29b</span><span class="o">-</span><span class="mi">41</span><span class="n">d4</span><span class="o">-</span><span class="n">a716</span><span class="o">-</span><span class="mi">446655440000</span><span class="p">:</span><span class="mi">650</span><span class="n">e8400</span><span class="o">-</span><span class="n">e29b</span><span class="o">-</span><span class="mi">41</span><span class="n">d4</span><span class="o">-</span><span class="n">a716</span><span class="o">-</span><span class="mi">446655440001</span><span class="w"> </span><span class="err">\</span><span class="w">
+  </span><span class="o">--</span><span class="n">uuid</span><span class="w"> </span><span class="n">a1b2c3d4</span><span class="o">-</span><span class="n">e5f6</span><span class="o">-</span><span class="mi">4</span><span class="n">a5b</span><span class="o">-</span><span class="mi">8</span><span class="n">c7d</span><span class="o">-</span><span class="mi">1</span><span class="n">e2f3a4b5c6d</span><span class="ss">:b2c3d4e5</span><span class="o">-</span><span class="n">f6a7</span><span class="o">-</span><span class="mi">4</span><span class="n">b5c</span><span class="o">-</span><span class="mi">8</span><span class="n">d7e</span><span class="o">-</span><span class="mi">2</span><span class="n">f3a4b5c6d7e</span><span class="w"> </span><span class="err">\</span><span class="w">
+  </span><span class="o">--</span><span class="n">uuid</span><span class="w"> </span><span class="n">f6a7b8c9</span><span class="o">-</span><span class="n">d0e1</span><span class="o">-</span><span class="mi">4</span><span class="n">f5a</span><span class="o">-</span><span class="mi">9</span><span class="n">b0c</span><span class="o">-</span><span class="mi">5</span><span class="n">d6e7f8a9b0c</span><span class="ss">:a7b8c9d0</span><span class="o">-</span><span class="n">e1f2</span><span class="o">-</span><span class="mi">4</span><span class="n">a5b</span><span class="o">-</span><span class="mi">9</span><span class="n">c0d</span><span class="o">-</span><span class="mi">6</span><span class="n">e7f8a9b0c1d</span><span class="w"> </span><span class="err">\</span><span class="w">
+  </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">merged</span><span class="o">.</span><span class="n">json</span></code></pre>
+    </section>
+
+</div>
+
+
+    <footer class="footer">
+
+        <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+              Go to package docs
+            </button>
+
+              <a href="Lightning.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.3) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>

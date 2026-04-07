@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.39.3">
+    <meta name="project" content="Lightning v2.16.1-pre1">
+
+
+    <title>Lightning.WebhookAuthMethods — Lightning v2.16.1-pre1</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-VYWJUHZE.css" />
+
+    <script defer src="dist/sidebar_items-BC0EF6CC.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectImage">
+          <img src="assets/logo.png" alt="Lightning" />
+        </a>
+
+      <div>
+        <a href="https://openfn.github.io/lightning" class="sidebar-projectName" translate="no">
+Lightning
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v2.16.1-pre1
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras=""></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-module" id="main" data-type="modules">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Lightning</span>
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
+          </label>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>
+      <span translate="no">Lightning.WebhookAuthMethods</span> 
+      <small class="app-vsn" translate="no">(Lightning v2.16.1-pre1)</small>
+
+    </h1>
+
+      <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+  </div>
+
+
+    <section id="moduledoc">
+<p>Provides functionality for managing webhook authentication methods.</p><p>This module contains functions to create, update, list, and delete authentication methods
+for webhooks. It supports operations such as scheduling authentication methods for deletion,
+purging them, associating them with triggers, and handling their life cycle within the system.</p><p>The main responsibilities of this module include:</p><ul><li>Creating new webhook authentication methods with <a href="#create_auth_method/2"><code class="inline">create_auth_method/2</code></a>.</li><li>Associating and disassociating authentication methods with triggers.</li><li>Updating existing webhook authentication methods with <a href="#update_auth_method/3"><code class="inline">update_auth_method/3</code></a>.</li><li>Listing webhook authentication methods for a given project or trigger.</li><li>Finding a webhook authentication method by various identifiers, like API key or username and password.</li><li>Scheduling webhook authentication methods for deletion and purging them accordingly.</li></ul>
+    </section>
+
+</div>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#build/2" data-no-tooltip="" translate="no">build(webhook_auth_method, params)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Builds <code class="inline">WebhookAuthMethod</code> struct, which can include special handling based on the authentication type.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create_auth_method/2" data-no-tooltip="" translate="no">create_auth_method(attrs, list)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Creates a new <code class="inline">WebhookAuthMethod</code> and associated audit records.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create_auth_method/3" data-no-tooltip="" translate="no">create_auth_method(trigger, params, list)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#delete_auth_method/1" data-no-tooltip="" translate="no">delete_auth_method(auth_method)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Deletes a given <code class="inline">WebhookAuthMethod</code> from the database.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#find_by_api_key/2" data-no-tooltip="" translate="no">find_by_api_key(api_key, project)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Retrieves a <code class="inline">WebhookAuthMethod</code> that matches the given API key for a specified project.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#find_by_id!/2" data-no-tooltip="" translate="no">find_by_id!(id, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Retrieves a <code class="inline">WebhookAuthMethod</code> by its ID, raising an exception if not found.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#find_by_username_and_password/3" data-no-tooltip="" translate="no">find_by_username_and_password(username, password, project)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Retrieves a <code class="inline">WebhookAuthMethod</code> that matches the given username and password within the scope of a specified project.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#list_for_project/1" data-no-tooltip="" translate="no">list_for_project(project)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Retrieves a list of <code class="inline">WebhookAuthMethod</code>s associated with a specific <code class="inline">Project</code>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#list_for_trigger/1" data-no-tooltip="" translate="no">list_for_trigger(trigger)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Retrieves a list of <code class="inline">WebhookAuthMethod</code>s associated with the specified <code class="inline">Trigger</code>.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#perform/1" data-no-tooltip="" translate="no">perform(job)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Performs cleanup of <code class="inline">WebhookAuthMethod</code> records that are marked for permanent deletion.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#schedule_for_deletion/2" data-no-tooltip="" translate="no">schedule_for_deletion(webhook_auth_method, list)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Schedules a <code class="inline">WebhookAuthMethod</code> for deletion by setting its <code class="inline">scheduled_deletion</code> date.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update_auth_method/3" data-no-tooltip="" translate="no">update_auth_method(webhook_auth_method, attrs, list)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Updates an existing <code class="inline">WebhookAuthMethod</code> with the provided attributes and creates an audit event.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update_trigger_auth_methods/3" data-no-tooltip="" translate="no">update_trigger_auth_methods(trigger, auth_methods, list)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Updates the association of <code class="inline">WebhookAuthMethod</code>s for a given <code class="inline">Trigger</code> and logs the changes as audit events.</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+
+    <div class="functions-list">
+<section class="detail" id="build/2">
+
+  <div class="detail-header">
+    <a href="#build/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">build(webhook_auth_method, params)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L747" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> build(<a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
+  <a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>()</pre>
+
+      </div>
+
+<p>Builds <code class="inline">WebhookAuthMethod</code> struct, which can include special handling based on the authentication type.</p><p>This function prepares a changeset for the creation or update of a <code class="inline">WebhookAuthMethod</code>. If the <code class="inline">auth_type</code> is <code class="inline">:api</code>, it generates a new API key and includes it in the returned structure.</p><h2 id="build/2-parameters" class="section-heading"><a href="#build/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">webhook_auth_method</code>: The <code class="inline">WebhookAuthMethod</code> struct to be updated.</li><li><code class="inline">params</code>: A map containing the parameters with which to update the <code class="inline">webhook_auth_method</code>.</li></ul><h2 id="build/2-returns" class="section-heading"><a href="#build/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li>Returns the updated <code class="inline">WebhookAuthMethod</code> struct with changes applied. If <code class="inline">auth_type</code> is <code class="inline">:api</code>, an API key is generated and included.</li></ul><h2 id="build/2-examples" class="section-heading"><a href="#build/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><ul><li><p>Building for an API type auth method:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.WebhookAuthMethods</span><span class="o">.</span><span class="n">build</span><span class="p" data-group-id="4518784230-1">(</span><span class="p" data-group-id="4518784230-2">%</span><span class="nc" data-group-id="4518784230-2">WebhookAuthMethod</span><span class="p" data-group-id="4518784230-2">{</span><span class="p" data-group-id="4518784230-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4518784230-3">%{</span><span class="ss">auth_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;api&quot;</span><span class="p" data-group-id="4518784230-3">}</span><span class="p" data-group-id="4518784230-1">)</span><span class="w">
+</span><span class="p" data-group-id="4518784230-4">%</span><span class="nc" data-group-id="4518784230-4">WebhookAuthMethod</span><span class="p" data-group-id="4518784230-4">{</span><span class="ss">api_key</span><span class="p">:</span><span class="w"> </span><span class="n">some_new_api_key</span><span class="p" data-group-id="4518784230-4">}</span></code></pre></li><li><p>Building for a non-API type auth method:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.WebhookAuthMethods</span><span class="o">.</span><span class="n">build</span><span class="p" data-group-id="8266383848-1">(</span><span class="p" data-group-id="8266383848-2">%</span><span class="nc" data-group-id="8266383848-2">WebhookAuthMethod</span><span class="p" data-group-id="8266383848-2">{</span><span class="ss">auth_type</span><span class="p">:</span><span class="w"> </span><span class="ss">:other</span><span class="p" data-group-id="8266383848-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8266383848-3">%{</span><span class="p" data-group-id="8266383848-3">}</span><span class="p" data-group-id="8266383848-1">)</span><span class="w">
+</span><span class="p" data-group-id="8266383848-4">%</span><span class="nc" data-group-id="8266383848-4">WebhookAuthMethod</span><span class="p" data-group-id="8266383848-4">{</span><span class="p" data-group-id="8266383848-4">}</span></code></pre></li></ul>
+  </section>
+</section>
+<section class="detail" id="create_auth_method/2">
+
+  <div class="detail-header">
+    <a href="#create_auth_method/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">create_auth_method(attrs, list)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L159" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_auth_method(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), [{:actor, <a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>()}]) ::
+  {:ok, <a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Creates a new <code class="inline">WebhookAuthMethod</code> and associated audit records.</p><p>This function supports creating a <code class="inline">WebhookAuthMethod</code> either standalone or associated with a <code class="inline">Trigger</code>. It performs a database transaction that includes creating the auth method and its audit trail.</p><h2 id="create_auth_method/2-parameters" class="section-heading"><a href="#create_auth_method/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">attrs</code>: A map of attributes used to create the <code class="inline">WebhookAuthMethod</code>.</li><li><code class="inline">actor</code>: The user performing the action, provided as a <code class="inline">%User{}</code> struct.</li></ul><h2 id="create_auth_method/2-overloads" class="section-heading"><a href="#create_auth_method/2-overloads" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Overloads</span></h2><ul><li>When called with a map of attributes, it creates a <code class="inline">WebhookAuthMethod</code> without associating it to a trigger.</li><li>When called with a <code class="inline">Trigger</code> struct and a map of attributes, it creates a <code class="inline">WebhookAuthMethod</code> and associates it with the provided trigger.</li></ul><h2 id="create_auth_method/2-returns" class="section-heading"><a href="#create_auth_method/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, %WebhookAuthMethod{}}</code>: A tuple containing <code class="inline">:ok</code> and the newly created <code class="inline">WebhookAuthMethod</code> struct if the creation was successful.</li><li><code class="inline">{:error, %Ecto.Changeset{}}</code>: A tuple containing <code class="inline">:error</code> and the changeset with errors if the creation failed.</li></ul><h2 id="create_auth_method/2-examples" class="section-heading"><a href="#create_auth_method/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><ul><li><p>Creating a <code class="inline">WebhookAuthMethod</code> without an associated trigger:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">create_auth_method</span><span class="p" data-group-id="5226047987-1">(</span><span class="p" data-group-id="5226047987-2">%{</span><span class="n">valid_attributes</span><span class="p" data-group-id="5226047987-2">}</span><span class="p">,</span><span class="w"> </span><span class="ss">actor</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5226047987-3">%</span><span class="nc" data-group-id="5226047987-3">User</span><span class="p" data-group-id="5226047987-3">{</span><span class="p" data-group-id="5226047987-3">}</span><span class="p" data-group-id="5226047987-1">)</span><span class="w">
+</span><span class="p" data-group-id="5226047987-4">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5226047987-5">%</span><span class="nc" data-group-id="5226047987-5">WebhookAuthMethod</span><span class="p" data-group-id="5226047987-5">{</span><span class="p" data-group-id="5226047987-5">}</span><span class="p" data-group-id="5226047987-4">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_auth_method</span><span class="p" data-group-id="5226047987-6">(</span><span class="p" data-group-id="5226047987-7">%{</span><span class="n">invalid_attributes</span><span class="p" data-group-id="5226047987-7">}</span><span class="p">,</span><span class="w"> </span><span class="ss">actor</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5226047987-8">%</span><span class="nc" data-group-id="5226047987-8">User</span><span class="p" data-group-id="5226047987-8">{</span><span class="p" data-group-id="5226047987-8">}</span><span class="p" data-group-id="5226047987-6">)</span><span class="w">
+</span><span class="p" data-group-id="5226047987-9">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5226047987-10">%</span><span class="nc" data-group-id="5226047987-10">Ecto.Changeset</span><span class="p" data-group-id="5226047987-10">{</span><span class="p" data-group-id="5226047987-10">}</span><span class="p" data-group-id="5226047987-9">}</span></code></pre></li><li><p>Creating a <code class="inline">WebhookAuthMethod</code> with an associated trigger:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">create_auth_method</span><span class="p" data-group-id="9401858541-1">(</span><span class="p" data-group-id="9401858541-2">%</span><span class="nc" data-group-id="9401858541-2">Trigger</span><span class="p" data-group-id="9401858541-2">{</span><span class="p" data-group-id="9401858541-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9401858541-3">%{</span><span class="n">valid_attributes</span><span class="p" data-group-id="9401858541-3">}</span><span class="p">,</span><span class="w"> </span><span class="ss">actor</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9401858541-4">%</span><span class="nc" data-group-id="9401858541-4">User</span><span class="p" data-group-id="9401858541-4">{</span><span class="p" data-group-id="9401858541-4">}</span><span class="p" data-group-id="9401858541-1">)</span><span class="w">
+</span><span class="p" data-group-id="9401858541-5">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9401858541-6">%</span><span class="nc" data-group-id="9401858541-6">WebhookAuthMethod</span><span class="p" data-group-id="9401858541-6">{</span><span class="p" data-group-id="9401858541-6">}</span><span class="p" data-group-id="9401858541-5">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_auth_method</span><span class="p" data-group-id="9401858541-7">(</span><span class="p" data-group-id="9401858541-8">%</span><span class="nc" data-group-id="9401858541-8">Trigger</span><span class="p" data-group-id="9401858541-8">{</span><span class="p" data-group-id="9401858541-8">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9401858541-9">%{</span><span class="n">invalid_attributes</span><span class="p" data-group-id="9401858541-9">}</span><span class="p">,</span><span class="w"> </span><span class="ss">actor</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9401858541-10">%</span><span class="nc" data-group-id="9401858541-10">User</span><span class="p" data-group-id="9401858541-10">{</span><span class="p" data-group-id="9401858541-10">}</span><span class="p" data-group-id="9401858541-7">)</span><span class="w">
+</span><span class="p" data-group-id="9401858541-11">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9401858541-12">%</span><span class="nc" data-group-id="9401858541-12">Ecto.Changeset</span><span class="p" data-group-id="9401858541-12">{</span><span class="p" data-group-id="9401858541-12">}</span><span class="p" data-group-id="9401858541-11">}</span></code></pre></li></ul><h2 id="create_auth_method/2-notes" class="section-heading"><a href="#create_auth_method/2-notes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Notes</span></h2><ul><li>This function starts a <code class="inline">Repo.transaction</code> to ensure that all database operations are atomic. If any part of the transaction fails, all changes will be rolled back.</li><li>Audit events are created for both the creation of the <code class="inline">WebhookAuthMethod</code> and its association with a trigger, if applicable.</li></ul>
+  </section>
+</section>
+<section class="detail" id="create_auth_method/3">
+
+  <div class="detail-header">
+    <a href="#create_auth_method/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">create_auth_method(trigger, params, list)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L179" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_auth_method(<a href="Lightning.Workflows.Trigger.html#t:t/0">Lightning.Workflows.Trigger.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), [
+  {:actor, <a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>()}
+]) ::
+  {:ok, <a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="delete_auth_method/1">
+
+  <div class="detail-header">
+    <a href="#delete_auth_method/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">delete_auth_method(auth_method)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L419" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> delete_auth_method(<a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>()) ::
+  {:ok, <a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Deletes a given <code class="inline">WebhookAuthMethod</code> from the database.</p><p>The function takes a <code class="inline">WebhookAuthMethod</code> struct and runs to delete it. If the deletion is successful, it returns an <code class="inline">:ok</code> tuple with the deleted <code class="inline">WebhookAuthMethod</code> struct. If the deletion fails due to a constraint, such as a foreign key reference, it returns an error tuple.</p><h2 id="delete_auth_method/1-parameters" class="section-heading"><a href="#delete_auth_method/1-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">auth_method</code>: The <code class="inline">WebhookAuthMethod</code> struct to delete.</li></ul><h2 id="delete_auth_method/1-returns" class="section-heading"><a href="#delete_auth_method/1-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, struct}</code>: A tuple containing <code class="inline">:ok</code> and the deleted <code class="inline">WebhookAuthMethod</code> struct if the deletion succeeds.</li><li><code class="inline">{:error, reason}</code>: A tuple containing <code class="inline">:error</code> and the reason for failure if the deletion fails.</li></ul><h2 id="delete_auth_method/1-examples" class="section-heading"><a href="#delete_auth_method/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><ul><li><p>Successful deletion:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">delete_auth_method</span><span class="p" data-group-id="1615105094-1">(</span><span class="p" data-group-id="1615105094-2">%</span><span class="nc" data-group-id="1615105094-2">WebhookAuthMethod</span><span class="p" data-group-id="1615105094-2">{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;some_id&quot;</span><span class="p" data-group-id="1615105094-2">}</span><span class="p" data-group-id="1615105094-1">)</span><span class="w">
+</span><span class="p" data-group-id="1615105094-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1615105094-4">%</span><span class="nc" data-group-id="1615105094-4">WebhookAuthMethod</span><span class="p" data-group-id="1615105094-4">{</span><span class="p" data-group-id="1615105094-4">}</span><span class="p" data-group-id="1615105094-3">}</span></code></pre></li><li><p>Deletion fails due to the item not existing or other conflict:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">delete_auth_method</span><span class="p" data-group-id="2281974936-1">(</span><span class="p" data-group-id="2281974936-2">%</span><span class="nc" data-group-id="2281974936-2">WebhookAuthMethod</span><span class="p" data-group-id="2281974936-2">{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;non_existing_id&quot;</span><span class="p" data-group-id="2281974936-2">}</span><span class="p" data-group-id="2281974936-1">)</span><span class="w">
+</span><span class="p" data-group-id="2281974936-3">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="n">reason</span><span class="p" data-group-id="2281974936-3">}</span></code></pre></li></ul><h2 id="delete_auth_method/1-notes" class="section-heading"><a href="#delete_auth_method/1-notes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Notes</span></h2><ul><li>It is important to ensure that the <code class="inline">WebhookAuthMethod</code> is not being referenced by other entities before trying deletion to avoid conflicts.</li><li>This function will return an error tuple if the <code class="inline">WebhookAuthMethod</code> struct passed to it does not exist in the database.</li></ul>
+  </section>
+</section>
+<section class="detail" id="find_by_api_key/2">
+
+  <div class="detail-header">
+    <a href="#find_by_api_key/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">find_by_api_key(api_key, project)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L533" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> find_by_api_key(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>()) ::
+  <a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>() | nil</pre>
+
+      </div>
+
+<p>Retrieves a <code class="inline">WebhookAuthMethod</code> that matches the given API key for a specified project.</p><p>It uses a secure comparison to match the API key, ensuring that timing attacks are mitigated.</p><h2 id="find_by_api_key/2-parameters" class="section-heading"><a href="#find_by_api_key/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">api_key</code>: The API key as a binary string to match against existing <code class="inline">WebhookAuthMethod</code> records.</li><li><code class="inline">project</code>: The <code class="inline">Project</code> struct to scope the search within its associated <code class="inline">WebhookAuthMethod</code>s.</li></ul><h2 id="find_by_api_key/2-returns" class="section-heading"><a href="#find_by_api_key/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li>A <code class="inline">WebhookAuthMethod</code> struct if a matching API key is found within the given project's scope.</li><li><code class="inline">nil</code> if there is no <code class="inline">WebhookAuthMethod</code> with the given API key for the project.</li></ul><h2 id="find_by_api_key/2-examples" class="section-heading"><a href="#find_by_api_key/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><ul><li><p>When a matching <code class="inline">WebhookAuthMethod</code> is found:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.Workflows</span><span class="o">.</span><span class="n">find_by_api_key</span><span class="p" data-group-id="0839633780-1">(</span><span class="s">&quot;existing_api_key&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0839633780-2">%</span><span class="nc" data-group-id="0839633780-2">Project</span><span class="p" data-group-id="0839633780-2">{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;existing_project_id&quot;</span><span class="p" data-group-id="0839633780-2">}</span><span class="p" data-group-id="0839633780-1">)</span><span class="w">
+</span><span class="p" data-group-id="0839633780-3">%</span><span class="nc" data-group-id="0839633780-3">WebhookAuthMethod</span><span class="p" data-group-id="0839633780-3">{</span><span class="p" data-group-id="0839633780-3">}</span></code></pre></li><li><p>When there is no matching <code class="inline">WebhookAuthMethod</code>:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.Workflows</span><span class="o">.</span><span class="n">find_by_api_key</span><span class="p" data-group-id="3540180549-1">(</span><span class="s">&quot;non_existing_api_key&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3540180549-2">%</span><span class="nc" data-group-id="3540180549-2">Project</span><span class="p" data-group-id="3540180549-2">{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;existing_project_id&quot;</span><span class="p" data-group-id="3540180549-2">}</span><span class="p" data-group-id="3540180549-1">)</span><span class="w">
+</span><span class="no">nil</span></code></pre></li></ul>
+  </section>
+</section>
+<section class="detail" id="find_by_id!/2">
+
+    <span id="find_by_id!/1"></span>
+
+  <div class="detail-header">
+    <a href="#find_by_id!/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">find_by_id!(id, opts \\ [])</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L621" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> find_by_id!(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), opts :: <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>()) ::
+  <a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>()</pre>
+
+      </div>
+
+<p>Retrieves a <code class="inline">WebhookAuthMethod</code> by its ID, raising an exception if not found.</p><p>This function is intended for situations where the <code class="inline">WebhookAuthMethod</code> is expected to exist, and not finding one is an exceptional case that should halt normal flow with an error.</p><h2 id="find_by_id!/2-parameter" class="section-heading"><a href="#find_by_id!/2-parameter" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameter</span></h2><ul><li><code class="inline">id</code>: The ID of the <code class="inline">WebhookAuthMethod</code> to retrieve.</li></ul><h2 id="find_by_id!/2-returns" class="section-heading"><a href="#find_by_id!/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li>Returns the <code class="inline">WebhookAuthMethod</code> struct if found.</li></ul><h2 id="find_by_id!/2-errors" class="section-heading"><a href="#find_by_id!/2-errors" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Errors</span></h2><ul><li>Raises <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> if there is no <code class="inline">WebhookAuthMethod</code> with the given ID.</li></ul><h2 id="find_by_id!/2-examples" class="section-heading"><a href="#find_by_id!/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><ul><li><p>When a <code class="inline">WebhookAuthMethod</code> with the given ID exists:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.Workflows</span><span class="o">.</span><span class="n">find_by_id!</span><span class="p" data-group-id="3176107868-1">(</span><span class="s">&quot;existing_id&quot;</span><span class="p" data-group-id="3176107868-1">)</span><span class="w">
+</span><span class="p" data-group-id="3176107868-2">%</span><span class="nc" data-group-id="3176107868-2">WebhookAuthMethod</span><span class="p" data-group-id="3176107868-2">{</span><span class="p" data-group-id="3176107868-2">}</span></code></pre></li><li><p>When there is no <code class="inline">WebhookAuthMethod</code> with the given ID:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.Workflows</span><span class="o">.</span><span class="n">find_by_id!</span><span class="p" data-group-id="3898868343-1">(</span><span class="s">&quot;non_existing_id&quot;</span><span class="p" data-group-id="3898868343-1">)</span><span class="w">
+</span><span class="gt">** (Ecto.NoResultsError)</span></code></pre></li></ul>
+  </section>
+</section>
+<section class="detail" id="find_by_username_and_password/3">
+
+  <div class="detail-header">
+    <a href="#find_by_username_and_password/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">find_by_username_and_password(username, password, project)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L576" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> find_by_username_and_password(
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>()
+) ::
+  <a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>() | nil</pre>
+
+      </div>
+
+<p>Retrieves a <code class="inline">WebhookAuthMethod</code> that matches the given username and password within the scope of a specified project.</p><p>The function checks if the provided password is correct for the given username and project. If the password is valid, the corresponding <code class="inline">WebhookAuthMethod</code> is returned. It is important to handle password comparison securely to prevent timing attacks.</p><h2 id="find_by_username_and_password/3-parameters" class="section-heading"><a href="#find_by_username_and_password/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">username</code>: The username as a string to match against the <code class="inline">WebhookAuthMethod</code> records.</li><li><code class="inline">password</code>: The plaintext password as a string which will be securely compared to the stored password.</li><li><code class="inline">project</code>: The <code class="inline">Project</code> struct to scope the search for the <code class="inline">WebhookAuthMethod</code>.</li></ul><h2 id="find_by_username_and_password/3-returns" class="section-heading"><a href="#find_by_username_and_password/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li>Returns the matching <code class="inline">WebhookAuthMethod</code> struct if the username and password are correct within the given project's scope.</li><li>Returns <code class="inline">nil</code> if no matching record is found or if the password is invalid.</li></ul><h2 id="find_by_username_and_password/3-examples" class="section-heading"><a href="#find_by_username_and_password/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><ul><li><p>When a matching <code class="inline">WebhookAuthMethod</code> is found and the password is valid:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.Workflows</span><span class="o">.</span><span class="n">find_by_username_and_password</span><span class="p" data-group-id="0374357315-1">(</span><span class="s">&quot;existing_username&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;valid_password&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0374357315-2">%</span><span class="nc" data-group-id="0374357315-2">Project</span><span class="p" data-group-id="0374357315-2">{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;existing_project_id&quot;</span><span class="p" data-group-id="0374357315-2">}</span><span class="p" data-group-id="0374357315-1">)</span><span class="w">
+</span><span class="p" data-group-id="0374357315-3">%</span><span class="nc" data-group-id="0374357315-3">WebhookAuthMethod</span><span class="p" data-group-id="0374357315-3">{</span><span class="p" data-group-id="0374357315-3">}</span></code></pre></li><li><p>When the username is found but the password is invalid or no matching record is found:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.Workflows</span><span class="o">.</span><span class="n">find_by_username_and_password</span><span class="p" data-group-id="5655304463-1">(</span><span class="s">&quot;existing_username&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;invalid_password&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5655304463-2">%</span><span class="nc" data-group-id="5655304463-2">Project</span><span class="p" data-group-id="5655304463-2">{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;existing_project_id&quot;</span><span class="p" data-group-id="5655304463-2">}</span><span class="p" data-group-id="5655304463-1">)</span><span class="w">
+</span><span class="no">nil</span></code></pre></li></ul>
+  </section>
+</section>
+<section class="detail" id="list_for_project/1">
+
+  <div class="detail-header">
+    <a href="#list_for_project/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">list_for_project(project)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L454" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_for_project(<a href="Lightning.Projects.Project.html#t:t/0">Lightning.Projects.Project.t</a>()) :: [
+  <a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>()
+]</pre>
+
+      </div>
+
+<p>Retrieves a list of <code class="inline">WebhookAuthMethod</code>s associated with a specific <code class="inline">Project</code>.</p><p>The function filters <code class="inline">WebhookAuthMethod</code>s by the provided <code class="inline">Project</code>'s ID and excludes any methods that are scheduled for deletion.</p><h2 id="list_for_project/1-parameters" class="section-heading"><a href="#list_for_project/1-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">project</code>: The <code class="inline">Project</code> struct containing the ID of the project for which to list the authentication methods.</li></ul><h2 id="list_for_project/1-returns" class="section-heading"><a href="#list_for_project/1-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li>A list of <code class="inline">WebhookAuthMethod</code> structs. This can be an empty list if no methods are associated with the project or if the project does not exist.</li></ul><h2 id="list_for_project/1-examples" class="section-heading"><a href="#list_for_project/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><ul><li><p>When the project exists and has associated auth methods:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">list_for_project</span><span class="p" data-group-id="0529988327-1">(</span><span class="p" data-group-id="0529988327-2">%</span><span class="nc" data-group-id="0529988327-2">Project</span><span class="p" data-group-id="0529988327-2">{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;existing_project_id&quot;</span><span class="p" data-group-id="0529988327-2">}</span><span class="p" data-group-id="0529988327-1">)</span><span class="w">
+</span><span class="p" data-group-id="0529988327-3">[</span><span class="p" data-group-id="0529988327-4">%</span><span class="nc" data-group-id="0529988327-4">WebhookAuthMethod</span><span class="p" data-group-id="0529988327-4">{</span><span class="p" data-group-id="0529988327-4">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="0529988327-3">]</span></code></pre></li><li><p>When the project does not exist or has no associated auth methods:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">list_for_project</span><span class="p" data-group-id="9708968892-1">(</span><span class="p" data-group-id="9708968892-2">%</span><span class="nc" data-group-id="9708968892-2">Project</span><span class="p" data-group-id="9708968892-2">{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;non_existing_project_id&quot;</span><span class="p" data-group-id="9708968892-2">}</span><span class="p" data-group-id="9708968892-1">)</span><span class="w">
+</span><span class="p" data-group-id="9708968892-3">[</span><span class="p" data-group-id="9708968892-3">]</span></code></pre></li></ul>
+  </section>
+</section>
+<section class="detail" id="list_for_trigger/1">
+
+  <div class="detail-header">
+    <a href="#list_for_trigger/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">list_for_trigger(trigger)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L493" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_for_trigger(<a href="Lightning.Workflows.Trigger.html#t:t/0">Lightning.Workflows.Trigger.t</a>()) :: [
+  <a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>()
+]</pre>
+
+      </div>
+
+<p>Retrieves a list of <code class="inline">WebhookAuthMethod</code>s associated with the specified <code class="inline">Trigger</code>.</p><p>This function filters out <code class="inline">WebhookAuthMethod</code>s that are scheduled for deletion, ensuring that only active methods are returned.</p><h2 id="list_for_trigger/1-parameters" class="section-heading"><a href="#list_for_trigger/1-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">trigger</code>: A <code class="inline">Trigger</code> struct whose associated <code class="inline">WebhookAuthMethod</code>s are to be retrieved.</li></ul><h2 id="list_for_trigger/1-returns" class="section-heading"><a href="#list_for_trigger/1-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li>A list of <code class="inline">WebhookAuthMethod</code> structs associated with the <code class="inline">Trigger</code>. If the <code class="inline">Trigger</code> has no associated methods or if they are all scheduled for deletion, the list will be empty.</li></ul><h2 id="list_for_trigger/1-examples" class="section-heading"><a href="#list_for_trigger/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><ul><li><p>When the <code class="inline">Trigger</code> has associated <code class="inline">WebhookAuthMethod</code>s not scheduled for deletion:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.Workflows</span><span class="o">.</span><span class="n">list_for_trigger</span><span class="p" data-group-id="7059565733-1">(</span><span class="p" data-group-id="7059565733-2">%</span><span class="nc" data-group-id="7059565733-2">Trigger</span><span class="p" data-group-id="7059565733-2">{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;existing_trigger_id&quot;</span><span class="p" data-group-id="7059565733-2">}</span><span class="p" data-group-id="7059565733-1">)</span><span class="w">
+</span><span class="p" data-group-id="7059565733-3">[</span><span class="p" data-group-id="7059565733-4">%</span><span class="nc" data-group-id="7059565733-4">WebhookAuthMethod</span><span class="p" data-group-id="7059565733-4">{</span><span class="p" data-group-id="7059565733-4">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="7059565733-3">]</span></code></pre></li><li><p>When the <code class="inline">Trigger</code> has no associated <code class="inline">WebhookAuthMethod</code>s or they are all scheduled for deletion:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.Workflows</span><span class="o">.</span><span class="n">list_for_trigger</span><span class="p" data-group-id="3122264134-1">(</span><span class="p" data-group-id="3122264134-2">%</span><span class="nc" data-group-id="3122264134-2">Trigger</span><span class="p" data-group-id="3122264134-2">{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;trigger_without_methods&quot;</span><span class="p" data-group-id="3122264134-2">}</span><span class="p" data-group-id="3122264134-1">)</span><span class="w">
+</span><span class="p" data-group-id="3122264134-3">[</span><span class="p" data-group-id="3122264134-3">]</span></code></pre></li></ul>
+  </section>
+</section>
+<section class="detail" id="perform/1">
+
+  <div class="detail-header">
+    <a href="#perform/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">perform(job)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L66" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> perform(<a href="https://hexdocs.pm/oban/2.20.1/Oban.Job.html#t:t/0">Oban.Job.t</a>()) ::
+  {:ok, %{deleted_count: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), disassociated_count: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}}</pre>
+
+      </div>
+
+<p>Performs cleanup of <code class="inline">WebhookAuthMethod</code> records that are marked for permanent deletion.</p><h2 id="perform/1-details" class="section-heading"><a href="#perform/1-details" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Details</span></h2><p>This function, when invoked with a job argument containing <code class="inline">%{&quot;type&quot; =&gt; &quot;purge_deleted&quot;}</code>, performs the following operations:</p><ol><li>It queries all <code class="inline">WebhookAuthMethod</code> records that are scheduled for deletion (i.e., their <code class="inline">scheduled_deletion</code> timestamp is in the past).</li><li>It then disassociates each of these records from any associated triggers.</li><li>Finally, it deletes the <code class="inline">WebhookAuthMethod</code> records from the database.</li></ol><p>The function operates within the context of an Oban job, utilizing the <a href="#perform/1"><code class="inline">perform/1</code></a> callback expected by the Oban.Worker behaviour.</p><h2 id="perform/1-parameters" class="section-heading"><a href="#perform/1-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li>A <code class="inline">%Oban.Job{args: %{&quot;type&quot; =&gt; &quot;purge_deleted&quot;}}</code> struct, indicating the job should perform a purge operation.</li></ul><h2 id="perform/1-returns" class="section-heading"><a href="#perform/1-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><p>A tuple <code class="inline">{:ok, %{disassociated_count: integer(), deleted_count: integer()}}</code> where:</p><ul><li><code class="inline">:ok</code> indicates the operation was successful.</li><li><code class="inline">disassociated_count</code> is the number of <code class="inline">WebhookAuthMethod</code> records successfully disassociated from triggers.</li><li><code class="inline">deleted_count</code> is the number of <code class="inline">WebhookAuthMethod</code> records successfully deleted.</li></ul><h2 id="perform/1-example" class="section-heading"><a href="#perform/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Example</span></h2><pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="0114313163-1">%</span><span class="nc" data-group-id="0114313163-1">Oban.Job</span><span class="p" data-group-id="0114313163-1">{</span><span class="w">
+</span><span class="ss">args</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0114313163-2">%{</span><span class="s">&quot;type&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;purge_deleted&quot;</span><span class="p" data-group-id="0114313163-2">}</span><span class="w">
+</span><span class="p" data-group-id="0114313163-1">}</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">MyModule</span><span class="o">.</span><span class="n">perform</span><span class="p" data-group-id="0114313163-3">(</span><span class="p" data-group-id="0114313163-3">)</span><span class="w">
+</span><span class="c1"># =&gt; {:ok, %{disassociated_count: 2, deleted_count: 2}}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="schedule_for_deletion/2">
+
+  <div class="detail-header">
+    <a href="#schedule_for_deletion/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">schedule_for_deletion(webhook_auth_method, list)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L664" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> schedule_for_deletion(<a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>(), [
+  {:actor, <a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>()}
+]) ::
+  {:ok, <a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Schedules a <code class="inline">WebhookAuthMethod</code> for deletion by setting its <code class="inline">scheduled_deletion</code> date.</p><p>This function does not delete the record immediately. Instead, it sets the <code class="inline">scheduled_deletion</code> field to a date in the future as defined by the application's environment settings.
+The default behavior, in the absence of environment configuration, is to schedule the deletion for the current date and time, effectively marking it for immediate deletion.</p><p>The scheduled deletion date is determined by the <code class="inline">:purge_deleted_after_days</code> configuration in the application environment.
+If this configuration is not present, the function defaults to 0 days, which schedules the deletion for the current date and time.</p><h2 id="schedule_for_deletion/2-parameters" class="section-heading"><a href="#schedule_for_deletion/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">webhook_auth_method</code>: A <code class="inline">WebhookAuthMethod</code> struct that is to be scheduled for deletion.</li></ul><h2 id="schedule_for_deletion/2-returns" class="section-heading"><a href="#schedule_for_deletion/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, webhook_auth_method}</code>: Returns an <code class="inline">:ok</code> tuple with the updated webhook auth method struct if the
+  update was successful.</li><li><code class="inline">{:error, changeset}</code>: Returns an <code class="inline">:error</code> tuple with the changeset if the update failed.</li></ul><h2 id="schedule_for_deletion/2-examples" class="section-heading"><a href="#schedule_for_deletion/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><ul><li><p>When a webhook auth method is successfully scheduled for deletion:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.Workflows</span><span class="o">.</span><span class="n">schedule_for_deletion</span><span class="p" data-group-id="3575811669-1">(</span><span class="p" data-group-id="3575811669-2">%</span><span class="nc" data-group-id="3575811669-2">WebhookAuthMethod</span><span class="p" data-group-id="3575811669-2">{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="n">some_id</span><span class="p" data-group-id="3575811669-2">}</span><span class="p" data-group-id="3575811669-1">)</span><span class="w">
+</span><span class="p" data-group-id="3575811669-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3575811669-4">%</span><span class="nc" data-group-id="3575811669-4">WebhookAuthMethod</span><span class="p" data-group-id="3575811669-4">{</span><span class="ss">scheduled_deletion</span><span class="p">:</span><span class="w"> </span><span class="n">deletion_date</span><span class="p" data-group-id="3575811669-4">}</span><span class="p" data-group-id="3575811669-3">}</span></code></pre></li><li><p>When scheduling for deletion fails due to validation errors:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Lightning.Workflows</span><span class="o">.</span><span class="n">schedule_for_deletion</span><span class="p" data-group-id="0859887648-1">(</span><span class="p" data-group-id="0859887648-2">%</span><span class="nc" data-group-id="0859887648-2">WebhookAuthMethod</span><span class="p" data-group-id="0859887648-2">{</span><span class="p" data-group-id="0859887648-2">}</span><span class="p" data-group-id="0859887648-1">)</span><span class="w">
+</span><span class="p" data-group-id="0859887648-3">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0859887648-4">%</span><span class="nc" data-group-id="0859887648-4">Ecto.Changeset</span><span class="p" data-group-id="0859887648-4">{</span><span class="p" data-group-id="0859887648-4">}</span><span class="p" data-group-id="0859887648-3">}</span></code></pre></li></ul>
+  </section>
+</section>
+<section class="detail" id="update_auth_method/3">
+
+  <div class="detail-header">
+    <a href="#update_auth_method/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">update_auth_method(webhook_auth_method, attrs, list)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L248" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_auth_method(<a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), [
+  {:actor, <a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>()}
+]) ::
+  {:ok, <a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Updates an existing <code class="inline">WebhookAuthMethod</code> with the provided attributes and creates an audit event.</p><p>This function applies the given changes to the specified <code class="inline">WebhookAuthMethod</code> and records the update action in the audit log. It wraps the operations within a database transaction to ensure data integrity.</p><h2 id="update_auth_method/3-parameters" class="section-heading"><a href="#update_auth_method/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">webhook_auth_method</code>: The <code class="inline">WebhookAuthMethod</code> struct to be updated.</li><li><code class="inline">attrs</code>: A map containing the updated values for the fields of the <code class="inline">WebhookAuthMethod</code>.</li><li><code class="inline">actor</code>: The user performing the update, represented by a <code class="inline">%User{}</code> struct.</li></ul><h2 id="update_auth_method/3-returns" class="section-heading"><a href="#update_auth_method/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, %WebhookAuthMethod{}}</code>: A tuple containing <code class="inline">:ok</code> and the updated <code class="inline">WebhookAuthMethod</code> struct if the update is successful.</li><li><code class="inline">{:error, %Ecto.Changeset{}}</code>: A tuple containing <code class="inline">:error</code> and the changeset with errors if the update fails.</li></ul><h2 id="update_auth_method/3-examples" class="section-heading"><a href="#update_auth_method/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><ul><li><p>Successful update:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">update_auth_method</span><span class="p" data-group-id="8801271923-1">(</span><span class="n">webhook_auth_method</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8801271923-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="8801271923-2">}</span><span class="p">,</span><span class="w"> </span><span class="ss">actor</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8801271923-3">%</span><span class="nc" data-group-id="8801271923-3">User</span><span class="p" data-group-id="8801271923-3">{</span><span class="p" data-group-id="8801271923-3">}</span><span class="p" data-group-id="8801271923-1">)</span><span class="w">
+</span><span class="p" data-group-id="8801271923-4">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8801271923-5">%</span><span class="nc" data-group-id="8801271923-5">WebhookAuthMethod</span><span class="p" data-group-id="8801271923-5">{</span><span class="p" data-group-id="8801271923-5">}</span><span class="p" data-group-id="8801271923-4">}</span></code></pre></li><li><p>Update fails due to invalid data:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">update_auth_method</span><span class="p" data-group-id="4217031106-1">(</span><span class="n">webhook_auth_method</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4217031106-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="4217031106-2">}</span><span class="p">,</span><span class="w"> </span><span class="ss">actor</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4217031106-3">%</span><span class="nc" data-group-id="4217031106-3">User</span><span class="p" data-group-id="4217031106-3">{</span><span class="p" data-group-id="4217031106-3">}</span><span class="p" data-group-id="4217031106-1">)</span><span class="w">
+</span><span class="p" data-group-id="4217031106-4">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4217031106-5">%</span><span class="nc" data-group-id="4217031106-5">Ecto.Changeset</span><span class="p" data-group-id="4217031106-5">{</span><span class="p" data-group-id="4217031106-5">}</span><span class="p" data-group-id="4217031106-4">}</span></code></pre></li></ul><h2 id="update_auth_method/3-notes" class="section-heading"><a href="#update_auth_method/3-notes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Notes</span></h2><ul><li>The function uses <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Multi.html"><code class="inline">Ecto.Multi</code></a> to perform a transaction, ensuring that either all changes apply successfully, or none do if there's an error.</li><li>An audit event is recorded with the <code class="inline">Lightning.WebhookAuthMethodAudit.event/4</code> function, capturing the details of the update and the acting user.</li></ul>
+  </section>
+</section>
+<section class="detail" id="update_trigger_auth_methods/3">
+
+  <div class="detail-header">
+    <a href="#update_trigger_auth_methods/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">update_trigger_auth_methods(trigger, auth_methods, list)</h1>
+
+
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/webhook_auth_methods.ex#L322" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_trigger_auth_methods(
+  <a href="Lightning.Workflows.Trigger.html#t:t/0">Lightning.Workflows.Trigger.t</a>(),
+  [<a href="Lightning.Workflows.WebhookAuthMethod.html#t:t/0">Lightning.Workflows.WebhookAuthMethod.t</a>()] | [],
+  [{:actor, <a href="Lightning.Accounts.User.html#t:t/0">Lightning.Accounts.User.t</a>()}]
+) :: {:ok, <a href="Lightning.Workflows.Trigger.html#t:t/0">Lightning.Workflows.Trigger.t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Updates the association of <code class="inline">WebhookAuthMethod</code>s for a given <code class="inline">Trigger</code> and logs the changes as audit events.</p><p>This function replaces the current <code class="inline">WebhookAuthMethod</code> associations of a <code class="inline">Trigger</code> with the provided list of <code class="inline">WebhookAuthMethod</code>s. It creates audit events for each added and removed <code class="inline">WebhookAuthMethod</code>, ensuring full traceability of changes.</p><h2 id="update_trigger_auth_methods/3-parameters" class="section-heading"><a href="#update_trigger_auth_methods/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Parameters</span></h2><ul><li><code class="inline">trigger</code>: The <code class="inline">Trigger</code> struct whose associated <code class="inline">WebhookAuthMethod</code>s are to be updated.</li><li><code class="inline">auth_methods</code>: A list of <code class="inline">WebhookAuthMethod</code> structs to be associated with the <code class="inline">Trigger</code>.</li><li><code class="inline">actor</code>: The user performing the update, represented by a <code class="inline">%User{}</code> struct.</li></ul><h2 id="update_trigger_auth_methods/3-returns" class="section-heading"><a href="#update_trigger_auth_methods/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Returns</span></h2><ul><li><code class="inline">{:ok, %Trigger{}}</code>: A tuple containing <code class="inline">:ok</code> and the updated <code class="inline">Trigger</code> struct if the associations are updated successfully.</li><li><code class="inline">{:error, %Ecto.Changeset{}}</code>: A tuple containing <code class="inline">:error</code> and the changeset with errors if the update fails.</li></ul><h2 id="update_trigger_auth_methods/3-examples" class="section-heading"><a href="#update_trigger_auth_methods/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><ul><li><p>Successful association update:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">update_trigger_auth_methods</span><span class="p" data-group-id="5153953736-1">(</span><span class="n">trigger</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5153953736-2">[</span><span class="n">webhook_auth_method</span><span class="p" data-group-id="5153953736-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">actor</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5153953736-3">%</span><span class="nc" data-group-id="5153953736-3">User</span><span class="p" data-group-id="5153953736-3">{</span><span class="p" data-group-id="5153953736-3">}</span><span class="p" data-group-id="5153953736-1">)</span><span class="w">
+</span><span class="p" data-group-id="5153953736-4">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5153953736-5">%</span><span class="nc" data-group-id="5153953736-5">Trigger</span><span class="p" data-group-id="5153953736-5">{</span><span class="p" data-group-id="5153953736-5">}</span><span class="p" data-group-id="5153953736-4">}</span></code></pre></li><li><p>Update fails due to an invalid changeset:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">update_trigger_auth_methods</span><span class="p" data-group-id="7325734757-1">(</span><span class="n">trigger</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7325734757-2">[</span><span class="n">invalid_webhook_auth_method</span><span class="p" data-group-id="7325734757-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">actor</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7325734757-3">%</span><span class="nc" data-group-id="7325734757-3">User</span><span class="p" data-group-id="7325734757-3">{</span><span class="p" data-group-id="7325734757-3">}</span><span class="p" data-group-id="7325734757-1">)</span><span class="w">
+</span><span class="p" data-group-id="7325734757-4">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7325734757-5">%</span><span class="nc" data-group-id="7325734757-5">Ecto.Changeset</span><span class="p" data-group-id="7325734757-5">{</span><span class="p" data-group-id="7325734757-5">}</span><span class="p" data-group-id="7325734757-4">}</span></code></pre></li></ul><h2 id="update_trigger_auth_methods/3-notes" class="section-heading"><a href="#update_trigger_auth_methods/3-notes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Notes</span></h2><ul><li>The function uses <a href="https://hexdocs.pm/ecto/3.13.2/Ecto.Multi.html"><code class="inline">Ecto.Multi</code></a> to perform a transaction, which ensures either all changes are applied or none at all if an error occurs.</li><li>Audit events for the additions and removals of <code class="inline">WebhookAuthMethod</code>s are recorded using <code class="inline">WebhookAuthMethodAudit.event/4</code>.</li><li>The function preloads the existing <code class="inline">webhook_auth_methods</code> of the <code class="inline">Trigger</code> before performing updates.</li></ul>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+    <footer class="footer">
+
+        <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+              Go to package docs
+            </button>
+
+              <a href="Lightning.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.3) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>
