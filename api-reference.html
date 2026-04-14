@@ -5,14 +5,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.39.3">
-    <meta name="project" content="Lightning v2.16.1-pre1">
+    <meta name="project" content="Lightning v2.16.1">
 
 
-    <title>API Reference — Lightning v2.16.1-pre1</title>
+    <title>API Reference — Lightning v2.16.1</title>
 
     <link rel="stylesheet" href="dist/html-elixir-VYWJUHZE.css" />
 
-    <script defer src="dist/sidebar_items-BC0EF6CC.js"></script>
+    <script defer src="dist/sidebar_items-8DB3F9A4.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-XBCM4BHM.js"></script>
 
@@ -41,7 +41,7 @@
 Lightning
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.16.1-pre1
+          v2.16.1
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@ Lightning
 
 <div id="top-content">
   <div class="heading-with-actions top-heading">
-    <h1>API Reference <small class="app-vsn">Lightning v#2.16.1-pre1</small></h1>
+    <h1>API Reference <small class="app-vsn">Lightning v#2.16.1</small></h1>
 
       <a href="https://github.com/OpenFn/lightning" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
@@ -456,7 +456,7 @@ requests configured with middleware appropriate for OAuth specific tasks.</p></d
   </div>
 
     <div class="summary-synopsis"><p>Context for managing Channels — HTTP proxy configurations that forward
-requests from a source to a sink.</p></div>
+requests from a client to a destination.</p></div>
 
 </div>
 <div class="summary-row">
@@ -465,7 +465,7 @@ requests from a source to a sink.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Audit trail for channel CRUD operations.</p></div>
+    <div class="summary-synopsis"><p>Audit trail for channel CRUD and auth method changes.</p></div>
 
 </div>
 <div class="summary-row">
@@ -475,7 +475,7 @@ requests from a source to a sink.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Schema for a Channel — an HTTP proxy configuration that forwards
-requests from a source endpoint to a sink URL.</p></div>
+requests from a client endpoint to a destination URL.</p></div>
 
 </div>
 <div class="summary-row">
@@ -519,6 +519,15 @@ channel's configuration, created when a request is proxied.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Lightning.Channels.DestinationAuth.html" translate="no">Lightning.Channels.DestinationAuth</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Maps a credential's schema type and body to an outbound HTTP Authorization header.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Lightning.Channels.Handler.html" translate="no">Lightning.Channels.Handler</a>
 
   </div>
@@ -533,15 +542,6 @@ channel's configuration, created when a request is proxied.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Parses and validates search/filter parameters for ChannelRequest queries.</p></div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="Lightning.Channels.SinkAuth.html" translate="no">Lightning.Channels.SinkAuth</a>
-
-  </div>
-
-    <div class="summary-synopsis"><p>Maps a credential's schema type and body to an outbound HTTP Authorization header.</p></div>
 
 </div>
 <div class="summary-row">
@@ -2172,6 +2172,15 @@ tokens for communicating with github</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Lightning.WorkOrders.CancelManyWorkOrdersJob.html" translate="no">Lightning.WorkOrders.CancelManyWorkOrdersJob</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cancels available runs for multiple work orders in chunked batches.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Lightning.WorkOrders.ExportAudit.html" translate="no">Lightning.WorkOrders.ExportAudit</a>
 
   </div>
@@ -3510,6 +3519,15 @@ It is mirroring the <code class="inline">Project -&gt; ProjectUser</code> relati
   </div>
 
     <div class="summary-synopsis"><p>Phoenix channel to interact with Runs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="LightningWeb.RunLive.CancelHelper.html" translate="no">LightningWeb.RunLive.CancelHelper</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Shared logic for cancelling individual runs from LiveViews.</p></div>
 
 </div>
 <div class="summary-row">

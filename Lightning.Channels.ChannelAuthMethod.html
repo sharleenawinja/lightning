@@ -5,14 +5,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.39.3">
-    <meta name="project" content="Lightning v2.16.1-pre1">
+    <meta name="project" content="Lightning v2.16.1">
 
 
-    <title>Lightning.Channels.ChannelAuthMethod — Lightning v2.16.1-pre1</title>
+    <title>Lightning.Channels.ChannelAuthMethod — Lightning v2.16.1</title>
 
     <link rel="stylesheet" href="dist/html-elixir-VYWJUHZE.css" />
 
-    <script defer src="dist/sidebar_items-BC0EF6CC.js"></script>
+    <script defer src="dist/sidebar_items-8DB3F9A4.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-XBCM4BHM.js"></script>
 
@@ -41,7 +41,7 @@
 Lightning
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.16.1-pre1
+          v2.16.1
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ Lightning
   <div class="heading-with-actions top-heading">
     <h1>
       <span translate="no">Lightning.Channels.ChannelAuthMethod</span> 
-      <small class="app-vsn" translate="no">(Lightning v2.16.1-pre1)</small>
+      <small class="app-vsn" translate="no">(Lightning v2.16.1)</small>
 
     </h1>
 
@@ -111,9 +111,9 @@ Lightning
 
 
     <section id="moduledoc">
-<p>Join table connecting channels to auth method implementations.</p><p>Each record has a <code class="inline">role</code> (:source or :sink) and points to exactly one
-of <code class="inline">webhook_auth_method</code> (for source/inbound auth) or
-<code class="inline">project_credential</code> (for sink/outbound auth).</p>
+<p>Join table connecting channels to auth method implementations.</p><p>Each record has a <code class="inline">role</code> (:client or :destination) and points to exactly one
+of <code class="inline">webhook_auth_method</code> (for client/inbound auth) or
+<code class="inline">project_credential</code> (for destination/outbound auth).</p>
     </section>
 
 </div>
