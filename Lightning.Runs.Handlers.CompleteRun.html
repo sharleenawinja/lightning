@@ -5,14 +5,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.39.3">
-    <meta name="project" content="Lightning v2.16.2">
+    <meta name="project" content="Lightning v2.16.3-pre1">
 
 
-    <title>Lightning.Runs.Handlers.CompleteRun — Lightning v2.16.2</title>
+    <title>Lightning.Runs.Handlers.CompleteRun — Lightning v2.16.3-pre1</title>
 
     <link rel="stylesheet" href="dist/html-elixir-VYWJUHZE.css" />
 
-    <script defer src="dist/sidebar_items-4AF24319.js"></script>
+    <script defer src="dist/sidebar_items-EF7F2ED2.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-XBCM4BHM.js"></script>
 
@@ -41,7 +41,7 @@
 Lightning
         </a>
         <div class="sidebar-projectVersion" translate="no">
-          v2.16.2
+          v2.16.3-pre1
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ Lightning
   <div class="heading-with-actions top-heading">
     <h1>
       <span translate="no">Lightning.Runs.Handlers.CompleteRun</span> 
-      <small class="app-vsn" translate="no">(Lightning v2.16.2)</small>
+      <small class="app-vsn" translate="no">(Lightning v2.16.3-pre1)</small>
 
     </h1>
 
@@ -111,7 +111,9 @@ Lightning
 
 
     <section id="moduledoc">
-<p>Schema to validate the input attributes of a completed run.</p><p>The worker may send either:</p><ul><li><code class="inline">final_dataclip_id</code> — reuse an existing step output dataclip (single leaf)</li><li><code class="inline">final_state</code> — a new map to persist as a dataclip (multiple leaves)</li></ul><p>These are mutually exclusive. If both are sent, <code class="inline">final_dataclip_id</code> wins.</p>
+<p>Schema to validate the input attributes of a completed run.</p><p>The worker may send either:</p><ul><li><code class="inline">final_dataclip_id</code> — reuse an existing step output dataclip (single leaf)</li><li><code class="inline">final_state</code> — leaf state to persist as a dataclip (multiple leaves).
+Map values are stored as-is. Non-map values (numbers, strings, booleans,
+lists) are wrapped as <code class="inline">%{&quot;value&quot; =&gt; x}</code> before persistence.</li></ul><p>These are mutually exclusive. If both are sent, <code class="inline">final_dataclip_id</code> wins.</p>
     </section>
 
 </div>
@@ -168,7 +170,7 @@ Lightning
       <h1 class="signature" translate="no">call(run, params)</h1>
 
 
-        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/runs/handlers.ex#L89" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/runs/handlers.ex#L91" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -190,7 +192,7 @@ Lightning
       <h1 class="signature" translate="no">new(params)</h1>
 
 
-        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/runs/handlers.ex#L108" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/OpenFn/lightning/blob/main/lib/lightning/runs/handlers.ex#L110" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
